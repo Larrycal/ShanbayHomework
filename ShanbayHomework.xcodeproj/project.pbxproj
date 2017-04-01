@@ -1,0 +1,409 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		46F119351E8F49D8001CDE2B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F119341E8F49D8001CDE2B /* main.m */; };
+		46F119381E8F49D8001CDE2B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F119371E8F49D8001CDE2B /* AppDelegate.m */; };
+		46F1193B1E8F49D8001CDE2B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F1193A1E8F49D8001CDE2B /* ViewController.m */; };
+		46F1193E1E8F49D8001CDE2B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46F1193C1E8F49D8001CDE2B /* Main.storyboard */; };
+		46F119411E8F49D8001CDE2B /* ShanbayHomework.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 46F1193F1E8F49D8001CDE2B /* ShanbayHomework.xcdatamodeld */; };
+		46F119431E8F49D8001CDE2B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46F119421E8F49D8001CDE2B /* Assets.xcassets */; };
+		46F119461E8F49D8001CDE2B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46F119441E8F49D8001CDE2B /* LaunchScreen.storyboard */; };
+		46F1194F1E8F5281001CDE2B /* LARDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F1194E1E8F5281001CDE2B /* LARDBManager.m */; };
+		46F119521E8F52AE001CDE2B /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46F119511E8F52AE001CDE2B /* CoreData.framework */; };
+		46F119561E8F5733001CDE2B /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 46F119551E8F5733001CDE2B /* libsqlite3.tbd */; };
+		46F119591E8F5C65001CDE2B /* LARArticle.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F119581E8F5C65001CDE2B /* LARArticle.m */; };
+		46F1195B1E8F62C9001CDE2B /* shanbay.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 46F1195A1E8F62C9001CDE2B /* shanbay.sqlite */; };
+		46F1195E1E8F6BA5001CDE2B /* LARArticleCount.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F1195D1E8F6BA5001CDE2B /* LARArticleCount.m */; };
+		46F119641E8F9B90001CDE2B /* LARArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F119621E8F9B90001CDE2B /* LARArticleViewController.m */; };
+		46F119651E8F9B90001CDE2B /* LARArticleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46F119631E8F9B90001CDE2B /* LARArticleViewController.xib */; };
+		46F119681E8F9B9E001CDE2B /* LARNewWordsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F119671E8F9B9E001CDE2B /* LARNewWordsViewController.m */; };
+		46F1196C1E8F9BB4001CDE2B /* LARTranslationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F1196A1E8F9BB4001CDE2B /* LARTranslationViewController.m */; };
+		46F1196D1E8F9BB4001CDE2B /* LARTranslationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46F1196B1E8F9BB4001CDE2B /* LARTranslationViewController.xib */; };
+		46F119701E8F9BD3001CDE2B /* LARTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F1196F1E8F9BD3001CDE2B /* LARTabBarViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		46F119301E8F49D8001CDE2B /* ShanbayHomework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShanbayHomework.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		46F119341E8F49D8001CDE2B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		46F119361E8F49D8001CDE2B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		46F119371E8F49D8001CDE2B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		46F119391E8F49D8001CDE2B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		46F1193A1E8F49D8001CDE2B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		46F1193D1E8F49D8001CDE2B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		46F119401E8F49D8001CDE2B /* ShanbayHomework.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ShanbayHomework.xcdatamodel; sourceTree = "<group>"; };
+		46F119421E8F49D8001CDE2B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		46F119451E8F49D8001CDE2B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		46F119471E8F49D8001CDE2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		46F1194D1E8F5281001CDE2B /* LARDBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LARDBManager.h; sourceTree = "<group>"; };
+		46F1194E1E8F5281001CDE2B /* LARDBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LARDBManager.m; sourceTree = "<group>"; };
+		46F119511E8F52AE001CDE2B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		46F119541E8F54B3001CDE2B /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		46F119551E8F5733001CDE2B /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		46F119571E8F5C65001CDE2B /* LARArticle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LARArticle.h; sourceTree = "<group>"; };
+		46F119581E8F5C65001CDE2B /* LARArticle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LARArticle.m; sourceTree = "<group>"; };
+		46F1195A1E8F62C9001CDE2B /* shanbay.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = shanbay.sqlite; sourceTree = "<group>"; };
+		46F1195C1E8F6BA5001CDE2B /* LARArticleCount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LARArticleCount.h; sourceTree = "<group>"; };
+		46F1195D1E8F6BA5001CDE2B /* LARArticleCount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LARArticleCount.m; sourceTree = "<group>"; };
+		46F119611E8F9B90001CDE2B /* LARArticleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LARArticleViewController.h; sourceTree = "<group>"; };
+		46F119621E8F9B90001CDE2B /* LARArticleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LARArticleViewController.m; sourceTree = "<group>"; };
+		46F119631E8F9B90001CDE2B /* LARArticleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LARArticleViewController.xib; sourceTree = "<group>"; };
+		46F119661E8F9B9E001CDE2B /* LARNewWordsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LARNewWordsViewController.h; sourceTree = "<group>"; };
+		46F119671E8F9B9E001CDE2B /* LARNewWordsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LARNewWordsViewController.m; sourceTree = "<group>"; };
+		46F119691E8F9BB4001CDE2B /* LARTranslationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LARTranslationViewController.h; sourceTree = "<group>"; };
+		46F1196A1E8F9BB4001CDE2B /* LARTranslationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LARTranslationViewController.m; sourceTree = "<group>"; };
+		46F1196B1E8F9BB4001CDE2B /* LARTranslationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LARTranslationViewController.xib; sourceTree = "<group>"; };
+		46F1196E1E8F9BD3001CDE2B /* LARTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LARTabBarViewController.h; sourceTree = "<group>"; };
+		46F1196F1E8F9BD3001CDE2B /* LARTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LARTabBarViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		46F1192D1E8F49D7001CDE2B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46F119561E8F5733001CDE2B /* libsqlite3.tbd in Frameworks */,
+				46F119521E8F52AE001CDE2B /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		46F119271E8F49D7001CDE2B = {
+			isa = PBXGroup;
+			children = (
+				46F119321E8F49D8001CDE2B /* ShanbayHomework */,
+				46F119311E8F49D8001CDE2B /* Products */,
+				46F119501E8F52AE001CDE2B /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		46F119311E8F49D8001CDE2B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				46F119301E8F49D8001CDE2B /* ShanbayHomework.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		46F119321E8F49D8001CDE2B /* ShanbayHomework */ = {
+			isa = PBXGroup;
+			children = (
+				46F1195A1E8F62C9001CDE2B /* shanbay.sqlite */,
+				46F119361E8F49D8001CDE2B /* AppDelegate.h */,
+				46F119371E8F49D8001CDE2B /* AppDelegate.m */,
+				46F119391E8F49D8001CDE2B /* ViewController.h */,
+				46F1193A1E8F49D8001CDE2B /* ViewController.m */,
+				46F119541E8F54B3001CDE2B /* PrefixHeader.pch */,
+				46F1193C1E8F49D8001CDE2B /* Main.storyboard */,
+				46F119421E8F49D8001CDE2B /* Assets.xcassets */,
+				46F119441E8F49D8001CDE2B /* LaunchScreen.storyboard */,
+				46F119471E8F49D8001CDE2B /* Info.plist */,
+				46F1193F1E8F49D8001CDE2B /* ShanbayHomework.xcdatamodeld */,
+				46F119331E8F49D8001CDE2B /* Supporting Files */,
+				46F1194D1E8F5281001CDE2B /* LARDBManager.h */,
+				46F1194E1E8F5281001CDE2B /* LARDBManager.m */,
+				46F119571E8F5C65001CDE2B /* LARArticle.h */,
+				46F119581E8F5C65001CDE2B /* LARArticle.m */,
+				46F1195C1E8F6BA5001CDE2B /* LARArticleCount.h */,
+				46F1195D1E8F6BA5001CDE2B /* LARArticleCount.m */,
+			);
+			path = ShanbayHomework;
+			sourceTree = "<group>";
+		};
+		46F119331E8F49D8001CDE2B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				46F119341E8F49D8001CDE2B /* main.m */,
+				46F119611E8F9B90001CDE2B /* LARArticleViewController.h */,
+				46F119621E8F9B90001CDE2B /* LARArticleViewController.m */,
+				46F119631E8F9B90001CDE2B /* LARArticleViewController.xib */,
+				46F119661E8F9B9E001CDE2B /* LARNewWordsViewController.h */,
+				46F119671E8F9B9E001CDE2B /* LARNewWordsViewController.m */,
+				46F119691E8F9BB4001CDE2B /* LARTranslationViewController.h */,
+				46F1196A1E8F9BB4001CDE2B /* LARTranslationViewController.m */,
+				46F1196B1E8F9BB4001CDE2B /* LARTranslationViewController.xib */,
+				46F1196E1E8F9BD3001CDE2B /* LARTabBarViewController.h */,
+				46F1196F1E8F9BD3001CDE2B /* LARTabBarViewController.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		46F119501E8F52AE001CDE2B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				46F119551E8F5733001CDE2B /* libsqlite3.tbd */,
+				46F119511E8F52AE001CDE2B /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		46F1192F1E8F49D7001CDE2B /* ShanbayHomework */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 46F1194A1E8F49D8001CDE2B /* Build configuration list for PBXNativeTarget "ShanbayHomework" */;
+			buildPhases = (
+				46F1192C1E8F49D7001CDE2B /* Sources */,
+				46F1192D1E8F49D7001CDE2B /* Frameworks */,
+				46F1192E1E8F49D7001CDE2B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ShanbayHomework;
+			productName = ShanbayHomework;
+			productReference = 46F119301E8F49D8001CDE2B /* ShanbayHomework.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		46F119281E8F49D7001CDE2B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "柳钰柯";
+				TargetAttributes = {
+					46F1192F1E8F49D7001CDE2B = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 46F1192B1E8F49D7001CDE2B /* Build configuration list for PBXProject "ShanbayHomework" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 46F119271E8F49D7001CDE2B;
+			productRefGroup = 46F119311E8F49D8001CDE2B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				46F1192F1E8F49D7001CDE2B /* ShanbayHomework */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		46F1192E1E8F49D7001CDE2B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46F1195B1E8F62C9001CDE2B /* shanbay.sqlite in Resources */,
+				46F119651E8F9B90001CDE2B /* LARArticleViewController.xib in Resources */,
+				46F1196D1E8F9BB4001CDE2B /* LARTranslationViewController.xib in Resources */,
+				46F119461E8F49D8001CDE2B /* LaunchScreen.storyboard in Resources */,
+				46F119431E8F49D8001CDE2B /* Assets.xcassets in Resources */,
+				46F1193E1E8F49D8001CDE2B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		46F1192C1E8F49D7001CDE2B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46F1196C1E8F9BB4001CDE2B /* LARTranslationViewController.m in Sources */,
+				46F1193B1E8F49D8001CDE2B /* ViewController.m in Sources */,
+				46F1194F1E8F5281001CDE2B /* LARDBManager.m in Sources */,
+				46F119591E8F5C65001CDE2B /* LARArticle.m in Sources */,
+				46F119381E8F49D8001CDE2B /* AppDelegate.m in Sources */,
+				46F119411E8F49D8001CDE2B /* ShanbayHomework.xcdatamodeld in Sources */,
+				46F1195E1E8F6BA5001CDE2B /* LARArticleCount.m in Sources */,
+				46F119351E8F49D8001CDE2B /* main.m in Sources */,
+				46F119681E8F9B9E001CDE2B /* LARNewWordsViewController.m in Sources */,
+				46F119701E8F9BD3001CDE2B /* LARTabBarViewController.m in Sources */,
+				46F119641E8F9B90001CDE2B /* LARArticleViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		46F1193C1E8F49D8001CDE2B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				46F1193D1E8F49D8001CDE2B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		46F119441E8F49D8001CDE2B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				46F119451E8F49D8001CDE2B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		46F119481E8F49D8001CDE2B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		46F119491E8F49D8001CDE2B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		46F1194B1E8F49D8001CDE2B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = ShanbayHomework/PrefixHeader.pch;
+				INFOPLIST_FILE = ShanbayHomework/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cc.Larrycode.ShanbayHomework;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		46F1194C1E8F49D8001CDE2B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = ShanbayHomework/PrefixHeader.pch;
+				INFOPLIST_FILE = ShanbayHomework/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cc.Larrycode.ShanbayHomework;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		46F1192B1E8F49D7001CDE2B /* Build configuration list for PBXProject "ShanbayHomework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				46F119481E8F49D8001CDE2B /* Debug */,
+				46F119491E8F49D8001CDE2B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		46F1194A1E8F49D8001CDE2B /* Build configuration list for PBXNativeTarget "ShanbayHomework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				46F1194B1E8F49D8001CDE2B /* Debug */,
+				46F1194C1E8F49D8001CDE2B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		46F1193F1E8F49D8001CDE2B /* ShanbayHomework.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				46F119401E8F49D8001CDE2B /* ShanbayHomework.xcdatamodel */,
+			);
+			currentVersion = 46F119401E8F49D8001CDE2B /* ShanbayHomework.xcdatamodel */;
+			path = ShanbayHomework.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 46F119281E8F49D7001CDE2B /* Project object */;
+}
