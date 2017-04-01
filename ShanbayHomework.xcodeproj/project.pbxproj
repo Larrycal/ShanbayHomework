@@ -9,23 +9,28 @@
 /* Begin PBXBuildFile section */
 		46F119351E8F49D8001CDE2B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F119341E8F49D8001CDE2B /* main.m */; };
 		46F119381E8F49D8001CDE2B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F119371E8F49D8001CDE2B /* AppDelegate.m */; };
-		46F1193B1E8F49D8001CDE2B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F1193A1E8F49D8001CDE2B /* ViewController.m */; };
 		46F1193E1E8F49D8001CDE2B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46F1193C1E8F49D8001CDE2B /* Main.storyboard */; };
 		46F119411E8F49D8001CDE2B /* ShanbayHomework.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 46F1193F1E8F49D8001CDE2B /* ShanbayHomework.xcdatamodeld */; };
 		46F119431E8F49D8001CDE2B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46F119421E8F49D8001CDE2B /* Assets.xcassets */; };
 		46F119461E8F49D8001CDE2B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46F119441E8F49D8001CDE2B /* LaunchScreen.storyboard */; };
-		46F1194F1E8F5281001CDE2B /* LARDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F1194E1E8F5281001CDE2B /* LARDBManager.m */; };
 		46F119521E8F52AE001CDE2B /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46F119511E8F52AE001CDE2B /* CoreData.framework */; };
 		46F119561E8F5733001CDE2B /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 46F119551E8F5733001CDE2B /* libsqlite3.tbd */; };
-		46F119591E8F5C65001CDE2B /* LARArticle.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F119581E8F5C65001CDE2B /* LARArticle.m */; };
 		46F1195B1E8F62C9001CDE2B /* shanbay.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 46F1195A1E8F62C9001CDE2B /* shanbay.sqlite */; };
-		46F1195E1E8F6BA5001CDE2B /* LARArticleCount.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F1195D1E8F6BA5001CDE2B /* LARArticleCount.m */; };
-		46F119641E8F9B90001CDE2B /* LARArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F119621E8F9B90001CDE2B /* LARArticleViewController.m */; };
-		46F119651E8F9B90001CDE2B /* LARArticleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46F119631E8F9B90001CDE2B /* LARArticleViewController.xib */; };
-		46F119681E8F9B9E001CDE2B /* LARNewWordsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F119671E8F9B9E001CDE2B /* LARNewWordsViewController.m */; };
-		46F1196C1E8F9BB4001CDE2B /* LARTranslationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F1196A1E8F9BB4001CDE2B /* LARTranslationViewController.m */; };
-		46F1196D1E8F9BB4001CDE2B /* LARTranslationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46F1196B1E8F9BB4001CDE2B /* LARTranslationViewController.xib */; };
-		46F119701E8F9BD3001CDE2B /* LARTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F1196F1E8F9BD3001CDE2B /* LARTabBarViewController.m */; };
+		46F119C31E8FB3E3001CDE2B /* LARArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F1199E1E8FB3E3001CDE2B /* LARArticleViewController.m */; };
+		46F119C41E8FB3E3001CDE2B /* LARArticleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46F1199F1E8FB3E3001CDE2B /* LARArticleViewController.xib */; };
+		46F119C51E8FB3E3001CDE2B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F119A51E8FB3E3001CDE2B /* ViewController.m */; };
+		46F119C61E8FB3E3001CDE2B /* LARNewWordsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F119AB1E8FB3E3001CDE2B /* LARNewWordsViewController.m */; };
+		46F119C71E8FB3E3001CDE2B /* LARDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F119B31E8FB3E3001CDE2B /* LARDBManager.m */; };
+		46F119C81E8FB3E3001CDE2B /* LARArticle.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F119B61E8FB3E3001CDE2B /* LARArticle.m */; };
+		46F119C91E8FB3E3001CDE2B /* LARArticleCount.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F119B81E8FB3E3001CDE2B /* LARArticleCount.m */; };
+		46F119CA1E8FB3E3001CDE2B /* LARTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F119BB1E8FB3E3001CDE2B /* LARTabBarViewController.m */; };
+		46F119CB1E8FB3E3001CDE2B /* LARTranslationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F119BF1E8FB3E3001CDE2B /* LARTranslationViewController.m */; };
+		46F119CC1E8FB3E3001CDE2B /* LARTranslationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46F119C01E8FB3E3001CDE2B /* LARTranslationViewController.xib */; };
+		46F119CF1E8FB47D001CDE2B /* LARCTFrameParserConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F119CE1E8FB47D001CDE2B /* LARCTFrameParserConfig.m */; };
+		46F119D21E8FB4A3001CDE2B /* LARCTFrameParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F119D11E8FB4A3001CDE2B /* LARCTFrameParser.m */; };
+		46F119D51E8FB4B1001CDE2B /* LARCoreTextData.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F119D41E8FB4B1001CDE2B /* LARCoreTextData.m */; };
+		46F119D81E8FB4C1001CDE2B /* LARCTDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F119D71E8FB4C1001CDE2B /* LARCTDisplayView.m */; };
+		46F119DD1E8FB560001CDE2B /* UIView+LARFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F119DC1E8FB560001CDE2B /* UIView+LARFrame.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,33 +38,43 @@
 		46F119341E8F49D8001CDE2B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		46F119361E8F49D8001CDE2B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		46F119371E8F49D8001CDE2B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		46F119391E8F49D8001CDE2B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		46F1193A1E8F49D8001CDE2B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		46F1193D1E8F49D8001CDE2B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		46F119401E8F49D8001CDE2B /* ShanbayHomework.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ShanbayHomework.xcdatamodel; sourceTree = "<group>"; };
 		46F119421E8F49D8001CDE2B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		46F119451E8F49D8001CDE2B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		46F119471E8F49D8001CDE2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		46F1194D1E8F5281001CDE2B /* LARDBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LARDBManager.h; sourceTree = "<group>"; };
-		46F1194E1E8F5281001CDE2B /* LARDBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LARDBManager.m; sourceTree = "<group>"; };
 		46F119511E8F52AE001CDE2B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		46F119541E8F54B3001CDE2B /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		46F119551E8F5733001CDE2B /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
-		46F119571E8F5C65001CDE2B /* LARArticle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LARArticle.h; sourceTree = "<group>"; };
-		46F119581E8F5C65001CDE2B /* LARArticle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LARArticle.m; sourceTree = "<group>"; };
 		46F1195A1E8F62C9001CDE2B /* shanbay.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = shanbay.sqlite; sourceTree = "<group>"; };
-		46F1195C1E8F6BA5001CDE2B /* LARArticleCount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LARArticleCount.h; sourceTree = "<group>"; };
-		46F1195D1E8F6BA5001CDE2B /* LARArticleCount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LARArticleCount.m; sourceTree = "<group>"; };
-		46F119611E8F9B90001CDE2B /* LARArticleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LARArticleViewController.h; sourceTree = "<group>"; };
-		46F119621E8F9B90001CDE2B /* LARArticleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LARArticleViewController.m; sourceTree = "<group>"; };
-		46F119631E8F9B90001CDE2B /* LARArticleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LARArticleViewController.xib; sourceTree = "<group>"; };
-		46F119661E8F9B9E001CDE2B /* LARNewWordsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LARNewWordsViewController.h; sourceTree = "<group>"; };
-		46F119671E8F9B9E001CDE2B /* LARNewWordsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LARNewWordsViewController.m; sourceTree = "<group>"; };
-		46F119691E8F9BB4001CDE2B /* LARTranslationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LARTranslationViewController.h; sourceTree = "<group>"; };
-		46F1196A1E8F9BB4001CDE2B /* LARTranslationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LARTranslationViewController.m; sourceTree = "<group>"; };
-		46F1196B1E8F9BB4001CDE2B /* LARTranslationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LARTranslationViewController.xib; sourceTree = "<group>"; };
-		46F1196E1E8F9BD3001CDE2B /* LARTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LARTabBarViewController.h; sourceTree = "<group>"; };
-		46F1196F1E8F9BD3001CDE2B /* LARTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LARTabBarViewController.m; sourceTree = "<group>"; };
+		46F1199D1E8FB3E3001CDE2B /* LARArticleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LARArticleViewController.h; sourceTree = "<group>"; };
+		46F1199E1E8FB3E3001CDE2B /* LARArticleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LARArticleViewController.m; sourceTree = "<group>"; };
+		46F1199F1E8FB3E3001CDE2B /* LARArticleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LARArticleViewController.xib; sourceTree = "<group>"; };
+		46F119A41E8FB3E3001CDE2B /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		46F119A51E8FB3E3001CDE2B /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		46F119AA1E8FB3E3001CDE2B /* LARNewWordsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LARNewWordsViewController.h; sourceTree = "<group>"; };
+		46F119AB1E8FB3E3001CDE2B /* LARNewWordsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LARNewWordsViewController.m; sourceTree = "<group>"; };
+		46F119B21E8FB3E3001CDE2B /* LARDBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LARDBManager.h; sourceTree = "<group>"; };
+		46F119B31E8FB3E3001CDE2B /* LARDBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LARDBManager.m; sourceTree = "<group>"; };
+		46F119B51E8FB3E3001CDE2B /* LARArticle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LARArticle.h; sourceTree = "<group>"; };
+		46F119B61E8FB3E3001CDE2B /* LARArticle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LARArticle.m; sourceTree = "<group>"; };
+		46F119B71E8FB3E3001CDE2B /* LARArticleCount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LARArticleCount.h; sourceTree = "<group>"; };
+		46F119B81E8FB3E3001CDE2B /* LARArticleCount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LARArticleCount.m; sourceTree = "<group>"; };
+		46F119BA1E8FB3E3001CDE2B /* LARTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LARTabBarViewController.h; path = ../View/LARTabBarViewController.h; sourceTree = "<group>"; };
+		46F119BB1E8FB3E3001CDE2B /* LARTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LARTabBarViewController.m; path = ../View/LARTabBarViewController.m; sourceTree = "<group>"; };
+		46F119BE1E8FB3E3001CDE2B /* LARTranslationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LARTranslationViewController.h; sourceTree = "<group>"; };
+		46F119BF1E8FB3E3001CDE2B /* LARTranslationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LARTranslationViewController.m; sourceTree = "<group>"; };
+		46F119C01E8FB3E3001CDE2B /* LARTranslationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LARTranslationViewController.xib; sourceTree = "<group>"; };
+		46F119CD1E8FB47D001CDE2B /* LARCTFrameParserConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LARCTFrameParserConfig.h; sourceTree = "<group>"; };
+		46F119CE1E8FB47D001CDE2B /* LARCTFrameParserConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LARCTFrameParserConfig.m; sourceTree = "<group>"; };
+		46F119D01E8FB4A3001CDE2B /* LARCTFrameParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LARCTFrameParser.h; sourceTree = "<group>"; };
+		46F119D11E8FB4A3001CDE2B /* LARCTFrameParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LARCTFrameParser.m; sourceTree = "<group>"; };
+		46F119D31E8FB4B1001CDE2B /* LARCoreTextData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LARCoreTextData.h; sourceTree = "<group>"; };
+		46F119D41E8FB4B1001CDE2B /* LARCoreTextData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LARCoreTextData.m; sourceTree = "<group>"; };
+		46F119D61E8FB4C1001CDE2B /* LARCTDisplayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LARCTDisplayView.h; sourceTree = "<group>"; };
+		46F119D71E8FB4C1001CDE2B /* LARCTDisplayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LARCTDisplayView.m; sourceTree = "<group>"; };
+		46F119DB1E8FB560001CDE2B /* UIView+LARFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+LARFrame.h"; sourceTree = "<group>"; };
+		46F119DC1E8FB560001CDE2B /* UIView+LARFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+LARFrame.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,24 +110,8 @@
 		46F119321E8F49D8001CDE2B /* ShanbayHomework */ = {
 			isa = PBXGroup;
 			children = (
-				46F1195A1E8F62C9001CDE2B /* shanbay.sqlite */,
-				46F119361E8F49D8001CDE2B /* AppDelegate.h */,
-				46F119371E8F49D8001CDE2B /* AppDelegate.m */,
-				46F119391E8F49D8001CDE2B /* ViewController.h */,
-				46F1193A1E8F49D8001CDE2B /* ViewController.m */,
-				46F119541E8F54B3001CDE2B /* PrefixHeader.pch */,
-				46F1193C1E8F49D8001CDE2B /* Main.storyboard */,
-				46F119421E8F49D8001CDE2B /* Assets.xcassets */,
-				46F119441E8F49D8001CDE2B /* LaunchScreen.storyboard */,
-				46F119471E8F49D8001CDE2B /* Info.plist */,
-				46F1193F1E8F49D8001CDE2B /* ShanbayHomework.xcdatamodeld */,
+				46F1199A1E8FB3E3001CDE2B /* Classes */,
 				46F119331E8F49D8001CDE2B /* Supporting Files */,
-				46F1194D1E8F5281001CDE2B /* LARDBManager.h */,
-				46F1194E1E8F5281001CDE2B /* LARDBManager.m */,
-				46F119571E8F5C65001CDE2B /* LARArticle.h */,
-				46F119581E8F5C65001CDE2B /* LARArticle.m */,
-				46F1195C1E8F6BA5001CDE2B /* LARArticleCount.h */,
-				46F1195D1E8F6BA5001CDE2B /* LARArticleCount.m */,
 			);
 			path = ShanbayHomework;
 			sourceTree = "<group>";
@@ -120,17 +119,15 @@
 		46F119331E8F49D8001CDE2B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				46F1193F1E8F49D8001CDE2B /* ShanbayHomework.xcdatamodeld */,
+				46F119471E8F49D8001CDE2B /* Info.plist */,
+				46F119421E8F49D8001CDE2B /* Assets.xcassets */,
+				46F1195A1E8F62C9001CDE2B /* shanbay.sqlite */,
+				46F119441E8F49D8001CDE2B /* LaunchScreen.storyboard */,
+				46F119361E8F49D8001CDE2B /* AppDelegate.h */,
+				46F119371E8F49D8001CDE2B /* AppDelegate.m */,
+				46F119541E8F54B3001CDE2B /* PrefixHeader.pch */,
 				46F119341E8F49D8001CDE2B /* main.m */,
-				46F119611E8F9B90001CDE2B /* LARArticleViewController.h */,
-				46F119621E8F9B90001CDE2B /* LARArticleViewController.m */,
-				46F119631E8F9B90001CDE2B /* LARArticleViewController.xib */,
-				46F119661E8F9B9E001CDE2B /* LARNewWordsViewController.h */,
-				46F119671E8F9B9E001CDE2B /* LARNewWordsViewController.m */,
-				46F119691E8F9BB4001CDE2B /* LARTranslationViewController.h */,
-				46F1196A1E8F9BB4001CDE2B /* LARTranslationViewController.m */,
-				46F1196B1E8F9BB4001CDE2B /* LARTranslationViewController.xib */,
-				46F1196E1E8F9BD3001CDE2B /* LARTabBarViewController.h */,
-				46F1196F1E8F9BD3001CDE2B /* LARTabBarViewController.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -142,6 +139,226 @@
 				46F119511E8F52AE001CDE2B /* CoreData.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		46F1199A1E8FB3E3001CDE2B /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				46F1199B1E8FB3E3001CDE2B /* ArticleView */,
+				46F119A21E8FB3E3001CDE2B /* MainView */,
+				46F119A81E8FB3E3001CDE2B /* NewWordsView */,
+				46F119AE1E8FB3E3001CDE2B /* Other */,
+				46F119BC1E8FB3E3001CDE2B /* TraslationView */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		46F1199B1E8FB3E3001CDE2B /* ArticleView */ = {
+			isa = PBXGroup;
+			children = (
+				46F1199C1E8FB3E3001CDE2B /* Controller */,
+				46F119A01E8FB3E3001CDE2B /* Model */,
+				46F119A11E8FB3E3001CDE2B /* View */,
+			);
+			path = ArticleView;
+			sourceTree = "<group>";
+		};
+		46F1199C1E8FB3E3001CDE2B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				46F1199D1E8FB3E3001CDE2B /* LARArticleViewController.h */,
+				46F1199E1E8FB3E3001CDE2B /* LARArticleViewController.m */,
+				46F1199F1E8FB3E3001CDE2B /* LARArticleViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		46F119A01E8FB3E3001CDE2B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		46F119A11E8FB3E3001CDE2B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		46F119A21E8FB3E3001CDE2B /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				46F119A31E8FB3E3001CDE2B /* Controller */,
+				46F119A61E8FB3E3001CDE2B /* Model */,
+				46F119A71E8FB3E3001CDE2B /* View */,
+			);
+			path = MainView;
+			sourceTree = "<group>";
+		};
+		46F119A31E8FB3E3001CDE2B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				46F119A41E8FB3E3001CDE2B /* ViewController.h */,
+				46F119A51E8FB3E3001CDE2B /* ViewController.m */,
+				46F1193C1E8F49D8001CDE2B /* Main.storyboard */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		46F119A61E8FB3E3001CDE2B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		46F119A71E8FB3E3001CDE2B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		46F119A81E8FB3E3001CDE2B /* NewWordsView */ = {
+			isa = PBXGroup;
+			children = (
+				46F119A91E8FB3E3001CDE2B /* Controller */,
+				46F119AC1E8FB3E3001CDE2B /* Model */,
+				46F119AD1E8FB3E3001CDE2B /* View */,
+			);
+			path = NewWordsView;
+			sourceTree = "<group>";
+		};
+		46F119A91E8FB3E3001CDE2B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				46F119AA1E8FB3E3001CDE2B /* LARNewWordsViewController.h */,
+				46F119AB1E8FB3E3001CDE2B /* LARNewWordsViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		46F119AC1E8FB3E3001CDE2B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		46F119AD1E8FB3E3001CDE2B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		46F119AE1E8FB3E3001CDE2B /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				46F119D91E8FB4E0001CDE2B /* Other */,
+				46F119AF1E8FB3E3001CDE2B /* Controller */,
+				46F119B01E8FB3E3001CDE2B /* CoreTextEngine */,
+				46F119B11E8FB3E3001CDE2B /* DBManager */,
+				46F119B41E8FB3E3001CDE2B /* Model */,
+				46F119B91E8FB3E3001CDE2B /* View */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		46F119AF1E8FB3E3001CDE2B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				46F119BA1E8FB3E3001CDE2B /* LARTabBarViewController.h */,
+				46F119BB1E8FB3E3001CDE2B /* LARTabBarViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		46F119B01E8FB3E3001CDE2B /* CoreTextEngine */ = {
+			isa = PBXGroup;
+			children = (
+				46F119CD1E8FB47D001CDE2B /* LARCTFrameParserConfig.h */,
+				46F119CE1E8FB47D001CDE2B /* LARCTFrameParserConfig.m */,
+				46F119D01E8FB4A3001CDE2B /* LARCTFrameParser.h */,
+				46F119D11E8FB4A3001CDE2B /* LARCTFrameParser.m */,
+				46F119D31E8FB4B1001CDE2B /* LARCoreTextData.h */,
+				46F119D41E8FB4B1001CDE2B /* LARCoreTextData.m */,
+				46F119D61E8FB4C1001CDE2B /* LARCTDisplayView.h */,
+				46F119D71E8FB4C1001CDE2B /* LARCTDisplayView.m */,
+			);
+			path = CoreTextEngine;
+			sourceTree = "<group>";
+		};
+		46F119B11E8FB3E3001CDE2B /* DBManager */ = {
+			isa = PBXGroup;
+			children = (
+				46F119B21E8FB3E3001CDE2B /* LARDBManager.h */,
+				46F119B31E8FB3E3001CDE2B /* LARDBManager.m */,
+			);
+			path = DBManager;
+			sourceTree = "<group>";
+		};
+		46F119B41E8FB3E3001CDE2B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				46F119B51E8FB3E3001CDE2B /* LARArticle.h */,
+				46F119B61E8FB3E3001CDE2B /* LARArticle.m */,
+				46F119B71E8FB3E3001CDE2B /* LARArticleCount.h */,
+				46F119B81E8FB3E3001CDE2B /* LARArticleCount.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		46F119B91E8FB3E3001CDE2B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		46F119BC1E8FB3E3001CDE2B /* TraslationView */ = {
+			isa = PBXGroup;
+			children = (
+				46F119BD1E8FB3E3001CDE2B /* Controller */,
+				46F119C11E8FB3E3001CDE2B /* Model */,
+				46F119C21E8FB3E3001CDE2B /* View */,
+			);
+			path = TraslationView;
+			sourceTree = "<group>";
+		};
+		46F119BD1E8FB3E3001CDE2B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				46F119BE1E8FB3E3001CDE2B /* LARTranslationViewController.h */,
+				46F119BF1E8FB3E3001CDE2B /* LARTranslationViewController.m */,
+				46F119C01E8FB3E3001CDE2B /* LARTranslationViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		46F119C11E8FB3E3001CDE2B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		46F119C21E8FB3E3001CDE2B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		46F119D91E8FB4E0001CDE2B /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				46F119DB1E8FB560001CDE2B /* UIView+LARFrame.h */,
+				46F119DC1E8FB560001CDE2B /* UIView+LARFrame.m */,
+			);
+			path = Other;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,6 +387,7 @@
 		46F119281E8F49D7001CDE2B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = LAR;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "柳钰柯";
 				TargetAttributes = {
@@ -203,8 +421,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				46F1195B1E8F62C9001CDE2B /* shanbay.sqlite in Resources */,
-				46F119651E8F9B90001CDE2B /* LARArticleViewController.xib in Resources */,
-				46F1196D1E8F9BB4001CDE2B /* LARTranslationViewController.xib in Resources */,
+				46F119C41E8FB3E3001CDE2B /* LARArticleViewController.xib in Resources */,
+				46F119CC1E8FB3E3001CDE2B /* LARTranslationViewController.xib in Resources */,
 				46F119461E8F49D8001CDE2B /* LaunchScreen.storyboard in Resources */,
 				46F119431E8F49D8001CDE2B /* Assets.xcassets in Resources */,
 				46F1193E1E8F49D8001CDE2B /* Main.storyboard in Resources */,
@@ -218,17 +436,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46F1196C1E8F9BB4001CDE2B /* LARTranslationViewController.m in Sources */,
-				46F1193B1E8F49D8001CDE2B /* ViewController.m in Sources */,
-				46F1194F1E8F5281001CDE2B /* LARDBManager.m in Sources */,
-				46F119591E8F5C65001CDE2B /* LARArticle.m in Sources */,
+				46F119CB1E8FB3E3001CDE2B /* LARTranslationViewController.m in Sources */,
 				46F119381E8F49D8001CDE2B /* AppDelegate.m in Sources */,
+				46F119C61E8FB3E3001CDE2B /* LARNewWordsViewController.m in Sources */,
+				46F119C81E8FB3E3001CDE2B /* LARArticle.m in Sources */,
+				46F119C71E8FB3E3001CDE2B /* LARDBManager.m in Sources */,
+				46F119D21E8FB4A3001CDE2B /* LARCTFrameParser.m in Sources */,
 				46F119411E8F49D8001CDE2B /* ShanbayHomework.xcdatamodeld in Sources */,
-				46F1195E1E8F6BA5001CDE2B /* LARArticleCount.m in Sources */,
 				46F119351E8F49D8001CDE2B /* main.m in Sources */,
-				46F119681E8F9B9E001CDE2B /* LARNewWordsViewController.m in Sources */,
-				46F119701E8F9BD3001CDE2B /* LARTabBarViewController.m in Sources */,
-				46F119641E8F9B90001CDE2B /* LARArticleViewController.m in Sources */,
+				46F119CF1E8FB47D001CDE2B /* LARCTFrameParserConfig.m in Sources */,
+				46F119CA1E8FB3E3001CDE2B /* LARTabBarViewController.m in Sources */,
+				46F119DD1E8FB560001CDE2B /* UIView+LARFrame.m in Sources */,
+				46F119C31E8FB3E3001CDE2B /* LARArticleViewController.m in Sources */,
+				46F119D81E8FB4C1001CDE2B /* LARCTDisplayView.m in Sources */,
+				46F119D51E8FB4B1001CDE2B /* LARCoreTextData.m in Sources */,
+				46F119C91E8FB3E3001CDE2B /* LARArticleCount.m in Sources */,
+				46F119C51E8FB3E3001CDE2B /* ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,6 +464,7 @@
 				46F1193D1E8F49D8001CDE2B /* Base */,
 			);
 			name = Main.storyboard;
+			path = ../../..;
 			sourceTree = "<group>";
 		};
 		46F119441E8F49D8001CDE2B /* LaunchScreen.storyboard */ = {
@@ -389,6 +613,7 @@
 				46F1194C1E8F49D8001CDE2B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

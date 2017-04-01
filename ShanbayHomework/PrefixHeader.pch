@@ -14,8 +14,12 @@
 
 #endif /* PrefixHeader_pch */
 
+#import "UIView+LARFrame.h"
+
 #ifdef DEBUG
 #define LARLog(...) NSLog(__VA_ARGS__)
 #else
 #define LARLog(...)
 #endif
+
+#define LARRGB(A, B, C)    [UIColor colorWithRed:(A)/255.0 green:(B)/255.0 blue:(C)/255.0 alpha:1.0]
