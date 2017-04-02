@@ -15,7 +15,9 @@
 
 @interface LARArticleViewController ()
 
-@property (weak, nonatomic) IBOutlet LARCTDisplayView *ctView;
+@property (strong, nonatomic)  LARCTDisplayView *ctView;
+/** ScrollView */
+@property (strong, nonatomic) UIScrollView *scrollView;
 
 @end
 
@@ -24,16 +26,27 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    _ctView = [[LARCTDisplayView alloc] init];
+    _scrollView = [[UIScrollView alloc] init];
+    
+    // 设置文字界面Frame
+    CGFloat h = [UIScreen mainScreen].bounds.size.height;
+    CGFloat w = [UIScreen mainScreen].bounds.size.width;
+    self.ctView.frame = CGRectMake(0, 0, w, h);
+    
     LARCTFrameParserConfig *config = [[LARCTFrameParserConfig alloc] init];
     config.textColor = [UIColor redColor];
-    self.ctView.y = self.navigationController.navigationBar.frame.size.height + [UIApplication sharedApplication].statusBarFrame.size.height;
-    self.ctView.width = [UIScreen mainScreen].bounds.size.width;
     config.width = self.ctView.width;
     
     LARCoreTextData *data = [LARCTFrameParser paraseContent:self.article config:config];
     self.ctView.data = data;
-    self.ctView.height = data.height;
+    self.ctView.height =data.height;
     self.ctView.backgroundColor = [UIColor yellowColor];
+    
+    self.scrollView.frame = CGRectMake(0, 0, w, h-self.tabBarController.tabBar.height);
+    self.scrollView.contentSize = CGSizeMake(w, data.height);
+    [self.scrollView addSubview:_ctView];
+    [self.view addSubview:self.scrollView];
 }
 
 - (void)didReceiveMemoryWarning {
