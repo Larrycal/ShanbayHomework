@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@class LARArticle;
 @interface LARTabBarViewController : UITabBarController
+
+/** 文章 */
+@property (strong, nonatomic) LARArticle *article;
+
+- (instancetype)initWithAriticle:(LARArticle *)article;
 
 @end

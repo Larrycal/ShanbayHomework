@@ -10,4 +10,7 @@
 
 @interface LARArticleViewController : UIViewController
 
+/** 文章 */
+@property (copy, nonatomic) NSString *article;
+
 @end

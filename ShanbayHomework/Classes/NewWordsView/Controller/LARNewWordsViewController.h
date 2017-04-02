@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface LARNewWordsViewController : UIViewController
-
+/** 生词 */
+@property (copy, nonatomic) NSString *words;
 @end

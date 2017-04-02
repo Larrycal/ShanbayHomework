@@ -71,13 +71,21 @@ static NSString *const ID = @"cell";
     return self.count.articles.count;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     // 进入文章详细列表
-    
-    LARTabBarViewController *vc = [[LARTabBarViewController alloc] init];
-    
+    LARTabBarViewController *vc = [[LARTabBarViewController alloc] initWithAriticle:_count.articles[indexPath.row]];
     [self.navigationController pushViewController:vc animated:YES];
+    
+    return indexPath;
 }
+
+//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(nonnull NSIndexPath *)indexPath{
+//    // 进入文章详细列表
+//    
+//    LARTabBarViewController *vc = [[LARTabBarViewController alloc] initWithAriticle:_count.articles[indexPath.row]];
+//    [self.navigationController pushViewController:vc animated:YES];
+//}
 
 // 设置一个估计高度，优化计算
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath{

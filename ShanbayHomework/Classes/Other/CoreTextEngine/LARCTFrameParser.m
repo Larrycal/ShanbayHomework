@@ -6,10 +6,72 @@
 //  Copyright © 2017年 柳钰柯. All rights reserved.
 //
 
+#import <CoreText/CoreText.h>
 #import "LARCTFrameParser.h"
 #import "LARCTFrameParserConfig.h"
 #import "LARCoreTextData.h"
 
 @implementation LARCTFrameParser
 
++ (NSDictionary *)attributesWithConfig:(LARCTFrameParserConfig *)config {
+    CGFloat fontSize = config.fontSize;
+    CTFontRef fontRef = CTFontCreateWithName((CFStringRef)@"ArialMT", fontSize, NULL);
+    CGFloat lineSpacing = config.lineSpace;
+    const CFIndex kNumberofSettings = 3;
+    CTParagraphStyleSetting theSettings[kNumberofSettings] = {
+        { kCTParagraphStyleSpecifierLineSpacingAdjustment, sizeof(CGFloat), &lineSpacing },
+        { kCTParagraphStyleSpecifierMaximumLineSpacing, sizeof(CGFloat), &lineSpacing},
+        { kCTParagraphStyleSpecifierMinimumLineSpacing, sizeof(CGFloat), &lineSpacing}
+    };
+    
+    CTParagraphStyleRef theParagraphRef = CTParagraphStyleCreate(theSettings, kNumberofSettings);
+    
+    UIColor *textColor = config.textColor;
+    
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    dict[(id)kCTForegroundColorAttributeName] = (id)textColor.CGColor;
+    dict[(id)kCTFontAttributeName] = (__bridge id)fontRef;
+    dict[(id)kCTParagraphStyleAttributeName] = (__bridge id)theParagraphRef;
+    
+    CFRelease(theParagraphRef);
+    CFRelease(fontRef);
+    return dict;
+}
+
++ (LARCoreTextData *)paraseContent:(NSString *)content config:(LARCTFrameParserConfig *)config {
+    NSDictionary *attributes = [self attributesWithConfig:config];
+    NSAttributedString *contentString = [[NSAttributedString alloc] initWithString:content
+                                                                        attributes:attributes];
+    // 创建 CTFramesetterRef实例
+    CTFramesetterRef framesetter = CTFramesetterCreateWithAttributedString((CFAttributedStringRef)contentString);
+    
+    // 获得要绘制的区域高度
+    CGSize restrictSize = CGSizeMake(config.width, CGFLOAT_MAX);
+    CGSize coreTextSize = CTFramesetterSuggestFrameSizeWithConstraints(framesetter, CFRangeMake(0, 0), nil, restrictSize, nil);
+    CGFloat textHeight = coreTextSize.height;
+    
+    // 生成CTFrameRef实例
+    CTFrameRef frame = [self createFrameWithFramesetter:framesetter config:config height:textHeight];
+    
+    // 将生成好的CTFrameRef 实例和计算好的绘制高度保存到CoreTextData实例中，最会返回LARCoreTextData实例
+    LARCoreTextData *data = [[LARCoreTextData alloc] init];
+    data.ctFrame = frame;
+    data.height = textHeight;
+    
+    // 释放内存
+    CFRelease(frame);
+    CFRelease(framesetter);
+    return data;
+}
+
++ (CTFrameRef)createFrameWithFramesetter:(CTFramesetterRef)framesetter
+                                  config:(LARCTFrameParserConfig *)config
+                                  height:(CGFloat)height {
+    CGMutablePathRef path = CGPathCreateMutable();
+    CGPathAddRect(path, NULL, CGRectMake(0, 0, config.width, height));
+    
+    CTFrameRef frame = CTFramesetterCreateFrame(framesetter, CFRangeMake(0, 0), path, NULL);
+    CFRelease(path);
+    return frame;
+}
 @end

@@ -10,4 +10,22 @@
 
 @implementation LARCoreTextData
 
+- (void)setCtFrame:(CTFrameRef)ctFrame {
+    if (_ctFrame != ctFrame) {
+        if (_ctFrame != nil) {
+            CFRelease(_ctFrame);
+        }
+        CFRetain(ctFrame);
+        _ctFrame = ctFrame;
+    }
+}
+
+// 记得释放CF对象
+- (void)dealloc {
+    if (_ctFrame != nil) {
+        CFRelease(_ctFrame);
+        _ctFrame = nil;
+    }
+}
+
 @end

@@ -10,6 +10,7 @@
 #import "LARArticleViewController.h"
 #import "LARNewWordsViewController.h"
 #import "LARTranslationViewController.h"
+#import "LARArticle.h"
 
 @interface LARTabBarViewController ()
 
@@ -17,20 +18,41 @@
 
 @implementation LARTabBarViewController
 
+- (instancetype)initWithAriticle:(LARArticle *)article {
+    if (self = [super init]) {
+        self.article = article;
+        [self loadData];
+    }
+    return self;
+}
+
+- (void)loadView {
+    [super loadView];
+    
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+}
+
+
+- (void)loadData {
     /** 添加子控制器 */
     LARArticleViewController *articleVC = [[LARArticleViewController alloc] init];
+    articleVC.article = [_article.title stringByAppendingFormat:@"\r\n%@",_article.article];
+    
     [self setUpChildVC:articleVC Title:@"文章" Image:@"tabBar_essence_icon" SelectImage:@"tabBar_essence_click_icon"];
     
     LARNewWordsViewController *newWordsVC = [[LARNewWordsViewController alloc] init];
+    newWordsVC.words = _article.words;
     [self setUpChildVC:newWordsVC Title:@"生词" Image:@"tabBar_new_icon" SelectImage:@"tabBar_new_click_icon"];
     
     LARTranslationViewController *translationVC = [[LARTranslationViewController alloc] init];
+    translationVC.translation = _article.translation;
     [self setUpChildVC:translationVC Title:@"翻译" Image:@"tabBar_friendTrends_icon" SelectImage:@"tabBar_me_click_icon"];
-}
 
+}
 /**
  * 添加子控制器
  */

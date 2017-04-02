@@ -7,8 +7,14 @@
 //
 
 #import "LARTranslationViewController.h"
+#import "LARCTDisplayView.h"
+#import "LARCoreTextData.h"
+#import "LARCTFrameParser.h"
+#import "LARCTFrameParserConfig.h"
 
 @interface LARTranslationViewController ()
+/** 显示界面 */
+@property (strong, nonatomic) LARCTDisplayView *ctView;
 
 @end
 
@@ -16,7 +22,27 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    _ctView = [[LARCTDisplayView alloc] init];
+    
+    LARCTFrameParserConfig *config = [[LARCTFrameParserConfig alloc] init];
+    config.textColor = [UIColor redColor];
+    
+    // 设置文字界面Frame
+    CGFloat y = self.navigationController.navigationBar.frame.size.height + [UIApplication sharedApplication].statusBarFrame.size.height;
+    CGFloat w = [UIScreen mainScreen].bounds.size.width;
+    self.ctView.frame = CGRectMake(0, y, w, 0);
+    
+    // 设置文字界面宽度
+    self.ctView.width = [UIScreen mainScreen].bounds.size.width;
+    config.width = self.ctView.width;
+    
+    LARCoreTextData *data = [LARCTFrameParser paraseContent:self.translation config:config];
+    self.ctView.data = data;
+    self.ctView.height = data.height;
+    self.ctView.backgroundColor = [UIColor yellowColor];
+    
+    [self.view addSubview:self.ctView];
 }
 
 - (void)didReceiveMemoryWarning {

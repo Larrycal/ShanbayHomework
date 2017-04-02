@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4617F2601E90D00C005764C2 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4617F25F1E90D00C005764C2 /* CoreText.framework */; };
 		46F119351E8F49D8001CDE2B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F119341E8F49D8001CDE2B /* main.m */; };
 		46F119381E8F49D8001CDE2B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F119371E8F49D8001CDE2B /* AppDelegate.m */; };
 		46F1193E1E8F49D8001CDE2B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46F1193C1E8F49D8001CDE2B /* Main.storyboard */; };
@@ -25,7 +26,6 @@
 		46F119C91E8FB3E3001CDE2B /* LARArticleCount.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F119B81E8FB3E3001CDE2B /* LARArticleCount.m */; };
 		46F119CA1E8FB3E3001CDE2B /* LARTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F119BB1E8FB3E3001CDE2B /* LARTabBarViewController.m */; };
 		46F119CB1E8FB3E3001CDE2B /* LARTranslationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F119BF1E8FB3E3001CDE2B /* LARTranslationViewController.m */; };
-		46F119CC1E8FB3E3001CDE2B /* LARTranslationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46F119C01E8FB3E3001CDE2B /* LARTranslationViewController.xib */; };
 		46F119CF1E8FB47D001CDE2B /* LARCTFrameParserConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F119CE1E8FB47D001CDE2B /* LARCTFrameParserConfig.m */; };
 		46F119D21E8FB4A3001CDE2B /* LARCTFrameParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F119D11E8FB4A3001CDE2B /* LARCTFrameParser.m */; };
 		46F119D51E8FB4B1001CDE2B /* LARCoreTextData.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F119D41E8FB4B1001CDE2B /* LARCoreTextData.m */; };
@@ -34,6 +34,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4617F25F1E90D00C005764C2 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		46F119301E8F49D8001CDE2B /* ShanbayHomework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShanbayHomework.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46F119341E8F49D8001CDE2B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		46F119361E8F49D8001CDE2B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -64,7 +65,6 @@
 		46F119BB1E8FB3E3001CDE2B /* LARTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LARTabBarViewController.m; path = ../View/LARTabBarViewController.m; sourceTree = "<group>"; };
 		46F119BE1E8FB3E3001CDE2B /* LARTranslationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LARTranslationViewController.h; sourceTree = "<group>"; };
 		46F119BF1E8FB3E3001CDE2B /* LARTranslationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LARTranslationViewController.m; sourceTree = "<group>"; };
-		46F119C01E8FB3E3001CDE2B /* LARTranslationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LARTranslationViewController.xib; sourceTree = "<group>"; };
 		46F119CD1E8FB47D001CDE2B /* LARCTFrameParserConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LARCTFrameParserConfig.h; sourceTree = "<group>"; };
 		46F119CE1E8FB47D001CDE2B /* LARCTFrameParserConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LARCTFrameParserConfig.m; sourceTree = "<group>"; };
 		46F119D01E8FB4A3001CDE2B /* LARCTFrameParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LARCTFrameParser.h; sourceTree = "<group>"; };
@@ -82,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4617F2601E90D00C005764C2 /* CoreText.framework in Frameworks */,
 				46F119561E8F5733001CDE2B /* libsqlite3.tbd in Frameworks */,
 				46F119521E8F52AE001CDE2B /* CoreData.framework in Frameworks */,
 			);
@@ -135,6 +136,7 @@
 		46F119501E8F52AE001CDE2B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4617F25F1E90D00C005764C2 /* CoreText.framework */,
 				46F119551E8F5733001CDE2B /* libsqlite3.tbd */,
 				46F119511E8F52AE001CDE2B /* CoreData.framework */,
 			);
@@ -144,11 +146,11 @@
 		46F1199A1E8FB3E3001CDE2B /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				46F119BC1E8FB3E3001CDE2B /* TraslationView */,
 				46F1199B1E8FB3E3001CDE2B /* ArticleView */,
 				46F119A21E8FB3E3001CDE2B /* MainView */,
 				46F119A81E8FB3E3001CDE2B /* NewWordsView */,
 				46F119AE1E8FB3E3001CDE2B /* Other */,
-				46F119BC1E8FB3E3001CDE2B /* TraslationView */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -333,7 +335,6 @@
 			children = (
 				46F119BE1E8FB3E3001CDE2B /* LARTranslationViewController.h */,
 				46F119BF1E8FB3E3001CDE2B /* LARTranslationViewController.m */,
-				46F119C01E8FB3E3001CDE2B /* LARTranslationViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -422,7 +423,6 @@
 			files = (
 				46F1195B1E8F62C9001CDE2B /* shanbay.sqlite in Resources */,
 				46F119C41E8FB3E3001CDE2B /* LARArticleViewController.xib in Resources */,
-				46F119CC1E8FB3E3001CDE2B /* LARTranslationViewController.xib in Resources */,
 				46F119461E8F49D8001CDE2B /* LaunchScreen.storyboard in Resources */,
 				46F119431E8F49D8001CDE2B /* Assets.xcassets in Resources */,
 				46F1193E1E8F49D8001CDE2B /* Main.storyboard in Resources */,

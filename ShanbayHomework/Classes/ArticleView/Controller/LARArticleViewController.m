@@ -7,8 +7,15 @@
 //
 
 #import "LARArticleViewController.h"
+#import "LARCTDisplayView.h"
+#import "LARCoreTextData.h"
+#import "LARCTFrameParser.h"
+#import "LARCTFrameParserConfig.h"
+#import "LARArticle.h"
 
 @interface LARArticleViewController ()
+
+@property (weak, nonatomic) IBOutlet LARCTDisplayView *ctView;
 
 @end
 
@@ -16,7 +23,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    LARCTFrameParserConfig *config = [[LARCTFrameParserConfig alloc] init];
+    config.textColor = [UIColor redColor];
+    self.ctView.y = self.navigationController.navigationBar.frame.size.height + [UIApplication sharedApplication].statusBarFrame.size.height;
+    self.ctView.width = [UIScreen mainScreen].bounds.size.width;
+    config.width = self.ctView.width;
+    
+    LARCoreTextData *data = [LARCTFrameParser paraseContent:self.article config:config];
+    self.ctView.data = data;
+    self.ctView.height = data.height;
+    self.ctView.backgroundColor = [UIColor yellowColor];
 }
 
 - (void)didReceiveMemoryWarning {

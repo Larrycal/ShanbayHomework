@@ -7,7 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "LARCoreTextData.h"
 
-@interface LARCTDisplayView : NSObject
-
+@interface LARCTDisplayView : UIView
+/** 数据 */
+@property (strong, nonatomic) LARCoreTextData *data;
 @end

@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface LARTranslationViewController : UIViewController
-
+/** 翻译 */
+@property (copy, nonatomic) NSString *translation;
 @end
