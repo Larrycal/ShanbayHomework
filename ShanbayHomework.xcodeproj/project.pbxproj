@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4617F2601E90D00C005764C2 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4617F25F1E90D00C005764C2 /* CoreText.framework */; };
+		46A019A91E922F080063C393 /* LARAllWords.m in Sources */ = {isa = PBXBuildFile; fileRef = 46A019A81E922F080063C393 /* LARAllWords.m */; };
+		46A019AC1E922F320063C393 /* LARWord.m in Sources */ = {isa = PBXBuildFile; fileRef = 46A019AB1E922F320063C393 /* LARWord.m */; };
 		46F119351E8F49D8001CDE2B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F119341E8F49D8001CDE2B /* main.m */; };
 		46F119381E8F49D8001CDE2B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F119371E8F49D8001CDE2B /* AppDelegate.m */; };
 		46F1193E1E8F49D8001CDE2B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46F1193C1E8F49D8001CDE2B /* Main.storyboard */; };
@@ -34,6 +36,10 @@
 
 /* Begin PBXFileReference section */
 		4617F25F1E90D00C005764C2 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		46A019A71E922F080063C393 /* LARAllWords.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LARAllWords.h; sourceTree = "<group>"; };
+		46A019A81E922F080063C393 /* LARAllWords.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LARAllWords.m; sourceTree = "<group>"; };
+		46A019AA1E922F320063C393 /* LARWord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LARWord.h; sourceTree = "<group>"; };
+		46A019AB1E922F320063C393 /* LARWord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LARWord.m; sourceTree = "<group>"; };
 		46F119301E8F49D8001CDE2B /* ShanbayHomework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShanbayHomework.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46F119341E8F49D8001CDE2B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		46F119361E8F49D8001CDE2B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -306,6 +312,10 @@
 				46F119B61E8FB3E3001CDE2B /* LARArticle.m */,
 				46F119B71E8FB3E3001CDE2B /* LARArticleCount.h */,
 				46F119B81E8FB3E3001CDE2B /* LARArticleCount.m */,
+				46A019A71E922F080063C393 /* LARAllWords.h */,
+				46A019A81E922F080063C393 /* LARAllWords.m */,
+				46A019AA1E922F320063C393 /* LARWord.h */,
+				46A019AB1E922F320063C393 /* LARWord.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -438,6 +448,8 @@
 				46F119C81E8FB3E3001CDE2B /* LARArticle.m in Sources */,
 				46F119C71E8FB3E3001CDE2B /* LARDBManager.m in Sources */,
 				46F119D21E8FB4A3001CDE2B /* LARCTFrameParser.m in Sources */,
+				46A019A91E922F080063C393 /* LARAllWords.m in Sources */,
+				46A019AC1E922F320063C393 /* LARWord.m in Sources */,
 				46F119411E8F49D8001CDE2B /* ShanbayHomework.xcdatamodeld in Sources */,
 				46F119351E8F49D8001CDE2B /* main.m in Sources */,
 				46F119CF1E8FB47D001CDE2B /* LARCTFrameParserConfig.m in Sources */,

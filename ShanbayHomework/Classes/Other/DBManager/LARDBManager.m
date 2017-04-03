@@ -9,7 +9,15 @@
 #import "LARDBManager.h"
 #import "LARArticle.h"
 #import "LARArticleCount.h"
+#import "LARWord.h"
+#import "LARAllWords.h"
 
+@interface LARDBManager (){
+     LARArticleCount * articles;
+     LARAllWords *allWords;
+}
+
+@end
 
 @implementation LARDBManager
 static sqlite3 *db = nil;
@@ -49,8 +57,12 @@ static sqlite3 *db = nil;
     }
 }
 
-// 查询数据库第几课
-- (LARArticleCount *)queryWithLessonNum:(int)num{
+// 查询数据库课程并保存
+- (LARArticleCount *)queryWithLessons{
+    if (articles != nil) {
+        return articles;
+    }
+    
     db = [self LAR_openDB];
     
     NSString *sql = [NSString stringWithFormat:@"SELECT * FROM ARTICLES"];
@@ -64,7 +76,7 @@ static sqlite3 *db = nil;
         LARLog(@"查询语句正确");
     
         // 用来保存所有文章
-        LARArticleCount *articles = [[LARArticleCount alloc] init];
+        articles = [[LARArticleCount alloc] init];
         NSMutableArray *arry = [NSMutableArray array];
         
         while (sqlite3_step(stmt) == SQLITE_ROW) {
@@ -98,37 +110,51 @@ static sqlite3 *db = nil;
     return nil;
 }
 
-// 查询文章总数
-- (LARArticleCount *)queryForArticleNumber{
-    db = [self LAR_openDB];
+// 查询所有等级单词
+- (LARAllWords *)queryWithWords {
+    if (allWords != nil) {
+        return allWords;
+    }
     
-    NSString *sql = [NSString stringWithFormat:@"select count from number_article"];
+    db = [self LAR_openDB];
+    NSString *sql = [NSString stringWithFormat:@"SELECT * FROM nce4_words"];
     LARLog(@"query :%@",sql);
     // 创建跟随指针，保存sql语句
     sqlite3_stmt *stmt = nil;
     
     // 执行语句
-    int result = sqlite3_prepare_v2(db, sql.UTF8String, -1, &stmt, nil);
+    int result = sqlite3_prepare_v2(db, sql.UTF8String, -1, &stmt, NULL);
     if (result == SQLITE_OK) {
         LARLog(@"查询语句正确");
-        LARArticleCount *count = [[LARArticleCount alloc] init];
+        
+        // 用来保存所有文章
+        allWords = [[LARAllWords alloc] init];
+        NSMutableArray *arry = [NSMutableArray array];
         
         while (sqlite3_step(stmt) == SQLITE_ROW) {
+            // 一篇文章
+            LARWord *data = [[LARWord alloc] init];
             // 查询赋值操作
-            int lesson = (int)sqlite3_column_text(stmt, 0);
+            char *word = (char *)sqlite3_column_text(stmt, 0);
+            int level = sqlite3_column_int(stmt, 1);
+            
             // 数据模型赋值
-            count.count = lesson;
-            // 释放跟随指针
-            sqlite3_finalize(stmt);
-            return count;
+            data.word = [NSString stringWithUTF8String:word];
+            data.level = level;
+            
+            [arry addObject:data];
         }
+        // 释放跟随指针
+        sqlite3_finalize(stmt);
+        allWords.allWords = [arry mutableCopy];
+        return allWords;
     }else{
         LARLog(@"查询语句错误");
     }
     // 查询失败也释放跟随指针
     sqlite3_finalize(stmt);
     return nil;
-
 }
+
 
 @end

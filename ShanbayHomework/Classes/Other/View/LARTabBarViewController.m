@@ -11,6 +11,7 @@
 #import "LARNewWordsViewController.h"
 #import "LARTranslationViewController.h"
 #import "LARArticle.h"
+#import "LARAllWords.h"
 
 @interface LARTabBarViewController ()
 
@@ -18,9 +19,10 @@
 
 @implementation LARTabBarViewController
 
-- (instancetype)initWithAriticle:(LARArticle *)article {
+- (instancetype)initWithAriticle:(LARArticle *)article Words:(LARAllWords *)words{
     if (self = [super init]) {
         self.article = article;
+        self.words = words;
         [self loadData];
     }
     return self;
@@ -41,6 +43,7 @@
     /** 添加子控制器 */
     LARArticleViewController *articleVC = [[LARArticleViewController alloc] init];
     articleVC.article = [_article.title stringByAppendingFormat:@"\r\n%@",_article.article];
+    articleVC.words = _words.allWords;
     
     [self setUpChildVC:articleVC Title:@"文章" Image:@"tabBar_essence_icon" SelectImage:@"tabBar_essence_click_icon"];
     

@@ -9,8 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <sqlite3.h>
 
-@class LARArticle;
 @class LARArticleCount;
+@class LARAllWords;
 
 @interface LARDBManager : NSObject
 
@@ -21,7 +21,7 @@
 /** 关闭数据库 */
 - (void)LAR_closeDB;
 /** 查询第几课 */
-- (LARArticleCount *)queryWithLessonNum:(int)num;
-/** 查询文章数 */
-- (LARArticleCount *)queryForArticleNumber;
+- (LARArticleCount *)queryWithLessons;
+/** 查询单词 */
+- (LARAllWords *)queryWithWords;
 @end

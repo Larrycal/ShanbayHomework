@@ -9,6 +9,8 @@
 #import "ViewController.h"
 #import "LARArticle.h"
 #import "LARDBManager.h"
+#import "LARAllWords.h"
+#import "LARWord.h"
 #import "LARArticleCount.h"
 #import "LARTabBarViewController.h"
 
@@ -23,6 +25,8 @@ static NSString *const ID = @"cell";
 @property (strong, nonatomic) LARArticle *articleData;
 /** Model->文章总数 */
 @property (strong, nonatomic) LARArticleCount *count;
+/** Model->单词 */
+@property (strong, nonatomic) LARAllWords *words;
 @end
 
 @implementation ViewController
@@ -46,13 +50,19 @@ static NSString *const ID = @"cell";
 }
 
 #pragma mark - 懒加载
-- (LARArticleCount *)count{
+- (LARArticleCount *)count {
     if (!_count) {
-        _count = [self.db queryWithLessonNum:1];
+        _count = [self.db queryWithLessons];
     }
     return _count;
 }
 
+- (LARAllWords *)words {
+    if (!_words) {
+        _words = [self.db queryWithWords];
+    }
+    return _words;
+}
 
 #pragma mark - <UITableViewDelegate>
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -74,18 +84,11 @@ static NSString *const ID = @"cell";
 - (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     // 进入文章详细列表
-    LARTabBarViewController *vc = [[LARTabBarViewController alloc] initWithAriticle:_count.articles[indexPath.row]];
+    LARTabBarViewController *vc = [[LARTabBarViewController alloc] initWithAriticle:_count.articles[indexPath.row] Words:self.words];
     [self.navigationController pushViewController:vc animated:YES];
     
     return indexPath;
 }
-
-//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(nonnull NSIndexPath *)indexPath{
-//    // 进入文章详细列表
-//    
-//    LARTabBarViewController *vc = [[LARTabBarViewController alloc] initWithAriticle:_count.articles[indexPath.row]];
-//    [self.navigationController pushViewController:vc animated:YES];
-//}
 
 // 设置一个估计高度，优化计算
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath{

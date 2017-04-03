@@ -17,4 +17,5 @@
 @property (assign, nonatomic) CGFloat lineSpace;
 /** 颜色 */
 @property (assign, nonatomic) UIColor *textColor;
+
 @end

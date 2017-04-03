@@ -38,10 +38,11 @@
     return dict;
 }
 
-+ (LARCoreTextData *)paraseContent:(NSString *)content config:(LARCTFrameParserConfig *)config {
++ (LARCoreTextData *)paraseContent:(NSAttributedString *)content config:(LARCTFrameParserConfig *)config {
     NSDictionary *attributes = [self attributesWithConfig:config];
-    NSAttributedString *contentString = [[NSAttributedString alloc] initWithString:content
-                                                                        attributes:attributes];
+    NSMutableAttributedString *contentString = [[NSMutableAttributedString alloc] initWithAttributedString:content];
+    [contentString addAttributes:attributes range:NSMakeRange(0, [contentString length])];
+    
     // 创建 CTFramesetterRef实例
     CTFramesetterRef framesetter = CTFramesetterCreateWithAttributedString((CFAttributedStringRef)contentString);
     

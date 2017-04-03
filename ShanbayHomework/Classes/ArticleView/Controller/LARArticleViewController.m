@@ -38,7 +38,22 @@
     config.textColor = [UIColor redColor];
     config.width = self.ctView.width;
     
-    LARCoreTextData *data = [LARCTFrameParser paraseContent:self.article config:config];
+    NSMutableAttributedString *s = [[NSMutableAttributedString alloc] initWithString:_article];
+    // 找出单词列表里面的单词
+    [_article enumerateSubstringsInRange:NSMakeRange(0, [_article length])
+                                 options:NSStringEnumerationByWords
+                              usingBlock:^(NSString * _Nullable substring, NSRange substringRange, NSRange enclosingRange, BOOL * _Nonnull stop) {
+                                  for (int i = 0; i < _words.count; ++i) {
+                                      if ([[_words[i] valueForKey:@"word"] isEqualToString:substring]) {
+                                          UIColor *cor = [UIColor greenColor];
+                                          NSDictionary *d = @{(NSString *)kCTBackgroundColorAttributeName:(id)cor.CGColor};
+                                          [s addAttributes:d range:substringRange];
+                                      }
+                                  }
+    }];
+    
+    
+    LARCoreTextData *data = [LARCTFrameParser paraseContent:s config:config];
     self.ctView.data = data;
     self.ctView.height =data.height;
     self.ctView.backgroundColor = [UIColor yellowColor];
@@ -48,20 +63,4 @@
     [self.scrollView addSubview:_ctView];
     [self.view addSubview:self.scrollView];
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 @end
