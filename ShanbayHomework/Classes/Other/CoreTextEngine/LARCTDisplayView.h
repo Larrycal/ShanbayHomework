@@ -12,4 +12,5 @@
 @interface LARCTDisplayView : UIView
 /** 数据 */
 @property (strong, nonatomic) LARCoreTextData *data;
+- (void)handleActiveRect;
 @end

@@ -38,7 +38,7 @@
     return dict;
 }
 
-+ (LARCoreTextData *)paraseContent:(NSAttributedString *)content config:(LARCTFrameParserConfig *)config {
++ (LARCoreTextData *)paraseContent:(NSAttributedString *)content config:(LARCTFrameParserConfig *)config wordInfo:(NSArray *)wordInfos{
     NSDictionary *attributes = [self attributesWithConfig:config];
     NSMutableAttributedString *contentString = [[NSMutableAttributedString alloc] initWithAttributedString:content];
     [contentString addAttributes:attributes range:NSMakeRange(0, [contentString length])];
@@ -58,6 +58,7 @@
     LARCoreTextData *data = [[LARCoreTextData alloc] init];
     data.ctFrame = frame;
     data.height = textHeight;
+    data.wordInfos = wordInfos;
     
     // 释放内存
     CFRelease(frame);

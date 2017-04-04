@@ -9,10 +9,11 @@
 #import <Foundation/Foundation.h>
 
 @class LARCoreTextData;
+@class LARArticleWordInfo;
 @class LARCTFrameParserConfig;
 
 @interface LARCTFrameParser : NSObject
 
-+ (LARCoreTextData *)paraseContent:(NSAttributedString *)content config:(LARCTFrameParserConfig *)config;
++ (LARCoreTextData *)paraseContent:(NSAttributedString *)content config:(LARCTFrameParserConfig *)config wordInfo:(NSArray *)wordInfos;
 
 @end

@@ -8,10 +8,11 @@
 
 #import "LARCTDisplayView.h"
 #import "LARCoreTextData.h"
+#import "LARArticleWordInfo.h"
 
 @interface LARCTDisplayView ()
 {
-    CGRect _wordsFrame;
+    NSMutableArray *arrText;
 }
 @end
 
@@ -31,114 +32,84 @@
     
 }
 
-//- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-//    UITouch *touch = [touches anyObject];
-//    CGPoint location = [self systemPointFromScreenPoint:[touch locationInView:self]];
-//    if ([self checkIsClickOnWords:location]) {
-//        return;
-//    }
-//    [self ClickOnStrWithPoint:location];
-//}
 
-//-(void)ClickOnStrWithPoint:(CGPoint)location
-//{
-//    NSArray * lines = (NSArray *)CTFrameGetLines(self.data.ctFrame);
-//    CFRange ranges[lines.count];
-//    CGPoint origins[lines.count];
-//    CTFrameGetLineOrigins(self.data.ctFrame, CFRangeMake(0, 0), origins);
-//    for (int i = 0; i < lines.count; i ++) {
-//        CTLineRef line = (__bridge CTLineRef)lines[i];
-//        CFRange range = CTLineGetStringRange(line);
-//        ranges[i] = range;
-//    }
-//    for (int i = 0; i < _length; i ++) {
-//        long maxLoc;
-//        int lineNum;
-//        for (int j = 0; j < lines.count; j ++) {
-//            CFRange range = ranges[j];
-//            maxLoc = range.location + range.length - 1;
-//            if (i <= maxLoc) {
-//                lineNum = j;
-//                break;
-//            }
-//        }
-//        CTLineRef line = (__bridge CTLineRef)lines[lineNum];        CGPoint origin = origins[lineNum];
-//        CGRect CTRunFrame = [self frameForCTRunWithIndex:i CTLine:line origin:origin];
-//        if ([self isFrame:CTRunFrame containsPoint:location]) {
-//            NSLog(@"您点击到了第 %d 个字符，位于第 %d 行，然而他没有响应事件。",i,lineNum + 1);//点击到文字，然而没有响应的处理。可以做其他处理
-//            return;
-//        }
-//    }
-//    NSLog(@"您没有点击到文字");
-//}
-
-// 单词点击判断
--(BOOL)checkIsClickOnWords:(CGPoint)location
-{
-    if ([self isFrame:_wordsFrame containsPoint:location]) {
-        NSLog(@"您点击到了单词");
-        return YES;
+// 给单词绑定CTFrame
+- (void)handleActiveRect{
+    if (!arrText) {
+        arrText = [NSMutableArray array];
     }
-    return NO;
-}
-
-// 计算单词的Frame
-//- (NSArray *)calculateWordsRectWithFrame:(CTFrameRef)frame {
-//    NSArray *arrLines = (NSArray *)CTFrameGetLines(frame);
-//    NSInteger count = [arrLines count];
-//    CGPoint points[count];
-//    CTFrameGetLineOrigins(frame, CFRangeMake(0, 0), points);
-//    for (int i = 0; i < count; ++i) {
-//        CTLineRef line = (__bridge CTLineRef)arrLines[i];
-//        NSArray *arryGlyphRun = (NSArray *)CTLineGetGlyphRuns(line);
-//    }
-//}
-
--(BOOL)isFrame:(CGRect)frame containsPoint:(CGPoint)point
-{
-    return CGRectContainsPoint(frame, point);
-}
-
-// 坐标转换
--(CGPoint)systemPointFromScreenPoint:(CGPoint)origin
-{
-    return CGPointMake(origin.x, self.bounds.size.height - origin.y);
-}
-
-
--(BOOL)isIndex:(NSInteger)index inRange:(NSRange)range
-{
-    if ((index <= range.location + range.length - 1) && (index >= range.location)) {
-        return YES;
+    NSArray *arrLines = (NSArray *)CTFrameGetLines(self.data.ctFrame);
+    NSInteger count = [arrLines count];//获取线的数量
+    CGPoint points[count];//建立起点的数组（cgpoint类型为结构体，故用C语言的数组）
+    CTFrameGetLineOrigins(self.data.ctFrame, CFRangeMake(0, 0), points);//获取起点
+    for (int i = 0; i < arrLines.count; i ++) {//遍历线的数组
+        CTLineRef line = (__bridge CTLineRef)arrLines[i];
+        NSArray *arrGlyphRun = (NSArray *)CTLineGetGlyphRuns(line);//获取GlyphRun数组（GlyphRun：高效的字符绘制方案）
+        for (int j = 0; j < arrGlyphRun.count; ++j) {
+            CTRunRef run = (__bridge CTRunRef)arrGlyphRun[j];
+            NSDictionary *attributes = (NSDictionary *)CTRunGetAttributes(run);
+            CGPoint point = points[i];//获取一个起点
+            NSString *str = attributes[@"word"];
+            if (str) {
+                LARLog(@"%@",str);
+                LARArticleWordInfo *info = [[LARArticleWordInfo alloc] init];
+                CGRect rect = [self getLocWithFrame:self.data.ctFrame CTLine:line CTRun:run origin:point];
+                LARLog(@"%@",NSStringFromCGRect(rect));
+                info.wordFrame =[self getLocWithFrame:self.data.ctFrame CTLine:line CTRun:run origin:point];
+                info.word = str;
+                [arrText addObject:info];
+            }
+        }
     }
-    return NO;
 }
 
--(CGRect)frameForCTRunWithIndex:(NSInteger)index
-                         CTLine:(CTLineRef)line
-                         origin:(CGPoint)origin
-{
-    CGFloat offsetX = CTLineGetOffsetForStringIndex(line, index, NULL);
-    CGFloat offsexX2 = CTLineGetOffsetForStringIndex(line, index + 1, NULL);
-    offsetX += origin.x;
-    offsexX2 += origin.x;
-    CGFloat offsetY = origin.y;
-    CGFloat lineAscent;
-    CGFloat lineDescent;
-    NSArray * runs = (__bridge NSArray *)CTLineGetGlyphRuns(line);
-    CTRunRef runCurrent;
-    for (int k = 0; k < runs.count; k ++) {
-        CTRunRef run = (__bridge CTRunRef)runs[k];
-        CFRange range = CTRunGetStringRange(run);
-        NSRange rangeOC = NSMakeRange(range.location, range.length);
-        if ([self isIndex:index inRange:rangeOC]) {
-            runCurrent = run;
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+
+    UITouch * touch = [touches anyObject];
+    CGPoint location = [touch locationInView:self];
+    for (LARArticleWordInfo *info in arrText) {
+        CGRect textFrmToScreen = [self convertRectFromLoc:info.wordFrame];
+        if (CGRectContainsPoint(textFrmToScreen, location)) {
+            [self clickAndChangeColor:info.word];
             break;
         }
     }
-    CTRunGetTypographicBounds(runCurrent, CFRangeMake(0, 0), &lineAscent, &lineDescent, NULL);
-    CGFloat height = lineAscent + lineDescent;
-    return CGRectMake(offsetX, offsetY, offsexX2 - offsetX, height);
 }
+
+///将系统坐标转换为屏幕坐标
+- (CGRect)convertRectFromLoc:(CGRect)rect
+{
+    return CGRectMake(rect.origin.x, self.bounds.size.height - rect.origin.y - rect.size.height , rect.size.width, rect.size.height);
+}
+
+- (void)clickAndChangeColor:(NSString *)word {
+    LARLog(@"点击了单词:%@",word);
+}
+
+-(CGRect)getLocWithFrame:(CTFrameRef)frame CTLine:(CTLineRef)line CTRun:(CTRunRef)run origin:(CGPoint)origin
+{
+    CGFloat ascent;//获取上距
+    CGFloat descent;//获取下距
+    CGRect boundsRun;//创建一个frame
+    boundsRun.size.width = CTRunGetTypographicBounds(run, CFRangeMake(0, 0), &ascent, &descent, NULL);
+    boundsRun.size.height = ascent + descent;
+    CGFloat xOffset = CTLineGetOffsetForStringIndex(line, CTRunGetStringRange(run).location, NULL);//获取x偏移量
+    boundsRun.origin.x = origin.x + xOffset;//point是行起点位置，加上每个字的偏移量得到每个字的x
+    boundsRun.origin.y = origin.y - descent;
+    CGPathRef path = CTFrameGetPath(frame);//获取绘制区域
+    CGRect colRect = CGPathGetBoundingBox(path);//获取剪裁区域边框
+    CGRect deleteBounds = CGRectOffset(boundsRun, colRect.origin.x, colRect.origin.y);//获取绘制区域
+    return deleteBounds;
+}
+
+# warning 进行Data中的wordInfoRange信息判断
+
+# warning 遍历所有文章中单词的range，判断点击地点是否击中
+
+
+
+
+
+
 
 @end

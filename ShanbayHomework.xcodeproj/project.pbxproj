@@ -11,6 +11,8 @@
 		46A019A91E922F080063C393 /* LARAllWords.m in Sources */ = {isa = PBXBuildFile; fileRef = 46A019A81E922F080063C393 /* LARAllWords.m */; };
 		46A019AC1E922F320063C393 /* LARWord.m in Sources */ = {isa = PBXBuildFile; fileRef = 46A019AB1E922F320063C393 /* LARWord.m */; };
 		46DE79751E9321FC0031CBC3 /* UIBarButtonItem+LARBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 46DE79741E9321FC0031CBC3 /* UIBarButtonItem+LARBarItem.m */; };
+		46DE79781E934AF50031CBC3 /* LARArticleWordInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 46DE79771E934AF50031CBC3 /* LARArticleWordInfo.m */; };
+		46DE79811E938E060031CBC3 /* NSString+LARValidateEnglish.m in Sources */ = {isa = PBXBuildFile; fileRef = 46DE79801E938E060031CBC3 /* NSString+LARValidateEnglish.m */; };
 		46F119351E8F49D8001CDE2B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F119341E8F49D8001CDE2B /* main.m */; };
 		46F119381E8F49D8001CDE2B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F119371E8F49D8001CDE2B /* AppDelegate.m */; };
 		46F1193E1E8F49D8001CDE2B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46F1193C1E8F49D8001CDE2B /* Main.storyboard */; };
@@ -43,6 +45,10 @@
 		46A019AB1E922F320063C393 /* LARWord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LARWord.m; sourceTree = "<group>"; };
 		46DE79731E9321FC0031CBC3 /* UIBarButtonItem+LARBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+LARBarItem.h"; sourceTree = "<group>"; };
 		46DE79741E9321FC0031CBC3 /* UIBarButtonItem+LARBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+LARBarItem.m"; sourceTree = "<group>"; };
+		46DE79761E934AF50031CBC3 /* LARArticleWordInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LARArticleWordInfo.h; sourceTree = "<group>"; };
+		46DE79771E934AF50031CBC3 /* LARArticleWordInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LARArticleWordInfo.m; sourceTree = "<group>"; };
+		46DE797F1E938E060031CBC3 /* NSString+LARValidateEnglish.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+LARValidateEnglish.h"; sourceTree = "<group>"; };
+		46DE79801E938E060031CBC3 /* NSString+LARValidateEnglish.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+LARValidateEnglish.m"; sourceTree = "<group>"; };
 		46F119301E8F49D8001CDE2B /* ShanbayHomework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShanbayHomework.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46F119341E8F49D8001CDE2B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		46F119361E8F49D8001CDE2B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -319,6 +325,8 @@
 				46A019A81E922F080063C393 /* LARAllWords.m */,
 				46A019AA1E922F320063C393 /* LARWord.h */,
 				46A019AB1E922F320063C393 /* LARWord.m */,
+				46DE79761E934AF50031CBC3 /* LARArticleWordInfo.h */,
+				46DE79771E934AF50031CBC3 /* LARArticleWordInfo.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -370,6 +378,8 @@
 				46DE79741E9321FC0031CBC3 /* UIBarButtonItem+LARBarItem.m */,
 				46F119DB1E8FB560001CDE2B /* UIView+LARFrame.h */,
 				46F119DC1E8FB560001CDE2B /* UIView+LARFrame.m */,
+				46DE797F1E938E060031CBC3 /* NSString+LARValidateEnglish.h */,
+				46DE79801E938E060031CBC3 /* NSString+LARValidateEnglish.m */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -449,6 +459,7 @@
 			files = (
 				46F119CB1E8FB3E3001CDE2B /* LARTranslationViewController.m in Sources */,
 				46F119381E8F49D8001CDE2B /* AppDelegate.m in Sources */,
+				46DE79811E938E060031CBC3 /* NSString+LARValidateEnglish.m in Sources */,
 				46F119C61E8FB3E3001CDE2B /* LARNewWordsViewController.m in Sources */,
 				46F119C81E8FB3E3001CDE2B /* LARArticle.m in Sources */,
 				46F119C71E8FB3E3001CDE2B /* LARDBManager.m in Sources */,
@@ -465,6 +476,7 @@
 				46F119D81E8FB4C1001CDE2B /* LARCTDisplayView.m in Sources */,
 				46F119D51E8FB4B1001CDE2B /* LARCoreTextData.m in Sources */,
 				46F119C91E8FB3E3001CDE2B /* LARArticleCount.m in Sources */,
+				46DE79781E934AF50031CBC3 /* LARArticleWordInfo.m in Sources */,
 				46F119C51E8FB3E3001CDE2B /* ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
