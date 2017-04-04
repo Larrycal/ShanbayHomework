@@ -77,9 +77,7 @@
                                   usingBlock:^(NSString * _Nullable substring, NSRange substringRange, NSRange enclosingRange, BOOL * _Nonnull stop) {
                                       // 遍历nce4单词列表 中的单词，若文章中有，且等级对应则进行单词匹配操作
                                       if ([NSString isEnglish:substring]) {// 不是中文则保存到单词列表
-                                          UIColor *cor = [UIColor greenColor];
-                                          NSDictionary *d = @{(NSString *)kCTBackgroundColorAttributeName:(id)cor.CGColor,
-                                                              @"word":substring};
+                                          NSDictionary *d = @{@"word":substring};
                                           [_normalStr addAttributes:d range:substringRange];
                                       }
                                   }];
@@ -100,6 +98,7 @@
     self.ctView.frame = CGRectMake(0, 0, w, h);
     
     LARCTFrameParserConfig *config = [[LARCTFrameParserConfig alloc] init];
+    
     config.textColor = [UIColor blackColor];
     config.width = self.ctView.width;
     
@@ -117,7 +116,7 @@
     data.length = [self.normalStr length];
     self.ctView.data = data;
     self.ctView.height = data.height;
-    self.ctView.backgroundColor = [UIColor whiteColor];
+    self.ctView.backgroundColor = LARGlobalBg;
     
     self.scrollView.frame = CGRectMake(0, 0, w, h - self.tabBarController.tabBar.height);
     self.scrollView.contentSize = CGSizeMake(w, data.height);

@@ -34,7 +34,7 @@ static NSString *const ID = @"cell";
 - (void)viewDidLoad {
     [super viewDidLoad];
 //    121 137 217
-    self.navigationController.navigationBar.barTintColor = LARRGB(145, 224, 159);
+    self.navigationController.navigationBar.barTintColor = LARRGB(58, 158, 138);
     self.navigationItem.title = @"扇贝Homework";
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
     

@@ -29,7 +29,8 @@
     UIColor *textColor = config.textColor;
     
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-    dict[(id)kCTForegroundColorAttributeName] = (id)textColor.CGColor;
+
+    dict[(id)kCTForegroundColorAttributeName] =  (id)(textColor.CGColor);
     dict[(id)kCTFontAttributeName] = (__bridge id)fontRef;
     dict[(id)kCTParagraphStyleAttributeName] = (__bridge id)theParagraphRef;
     
@@ -39,7 +40,9 @@
 }
 
 + (LARCoreTextData *)paraseContent:(NSAttributedString *)content config:(LARCTFrameParserConfig *)config wordInfo:(NSArray *)wordInfos{
+    
     NSDictionary *attributes = [self attributesWithConfig:config];
+    
     NSMutableAttributedString *contentString = [[NSMutableAttributedString alloc] initWithAttributedString:content];
     [contentString addAttributes:attributes range:NSMakeRange(0, [contentString length])];
     

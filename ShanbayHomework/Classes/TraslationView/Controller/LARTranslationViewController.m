@@ -34,19 +34,20 @@
     self.ctView.frame = CGRectMake(0, 0, w, h);
     
     LARCTFrameParserConfig *config = [[LARCTFrameParserConfig alloc] init];
-    config.textColor = [UIColor redColor];
+    config.textColor = [UIColor blackColor];
     config.width = self.ctView.width;
     
     NSAttributedString *s = [[NSAttributedString alloc] initWithString:self.translation];
     LARCoreTextData *data = [LARCTFrameParser paraseContent:s config:config wordInfo:nil];
     self.ctView.data = data;
     self.ctView.height = data.height;
-    self.ctView.backgroundColor = [UIColor yellowColor];
+    self.ctView.backgroundColor = LARGlobalBg;
     
-    self.scrollView.frame = CGRectMake(0, 0, w, h-self.tabBarController.tabBar.height);
+    self.scrollView.frame = CGRectMake(0, 0, w, h - self.tabBarController.tabBar.height);
     self.scrollView.contentSize = CGSizeMake(w, data.height);
     [self.scrollView addSubview:_ctView];
     [self.view addSubview:self.scrollView];
+    self.view.backgroundColor = LARGlobalBg;
 }
 
 - (void)didReceiveMemoryWarning {

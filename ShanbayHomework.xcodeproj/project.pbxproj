@@ -104,6 +104,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		46DE79821E93BB780031CBC3 /* PopView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PopView;
+			sourceTree = "<group>";
+		};
 		46F119271E8F49D7001CDE2B = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +166,7 @@
 		46F1199A1E8FB3E3001CDE2B /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				46DE79821E93BB780031CBC3 /* PopView */,
 				46F119BC1E8FB3E3001CDE2B /* TraslationView */,
 				46F1199B1E8FB3E3001CDE2B /* ArticleView */,
 				46F119A21E8FB3E3001CDE2B /* MainView */,

@@ -13,6 +13,7 @@
 @interface LARCTDisplayView ()
 {
     NSMutableArray *arrText;
+    UIView *colorView;
 }
 @end
 
@@ -64,17 +65,30 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-
+    BOOL isHit = NO;
     UITouch * touch = [touches anyObject];
     CGPoint location = [touch locationInView:self];
     for (LARArticleWordInfo *info in arrText) {
         CGRect textFrmToScreen = [self convertRectFromLoc:info.wordFrame];
         if (CGRectContainsPoint(textFrmToScreen, location)) {
-            [self clickAndChangeColor:info.word];
+            [self clickAndChangeColor:info.word Frame:textFrmToScreen];
+            isHit = YES;
             break;
         }
     }
+    if (!isHit) {
+        [colorView removeFromSuperview];
+    }
 }
+
+- (void)touchesCancelled:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    LARLog(@"touchesCancelled");
+}
+
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    LARLog(@"touchesEnded");
+}
+
 
 ///将系统坐标转换为屏幕坐标
 - (CGRect)convertRectFromLoc:(CGRect)rect
@@ -82,8 +96,15 @@
     return CGRectMake(rect.origin.x, self.bounds.size.height - rect.origin.y - rect.size.height , rect.size.width, rect.size.height);
 }
 
-- (void)clickAndChangeColor:(NSString *)word {
-    LARLog(@"点击了单词:%@",word);
+- (void)clickAndChangeColor:(NSString *)word Frame:(CGRect)frame{
+        LARLog(@"点击了单词:%@",word);
+    [colorView removeFromSuperview];
+    colorView = nil;
+    if (!colorView) {
+        colorView = [[UIView alloc] initWithFrame:frame];
+        colorView.backgroundColor = [UIColor colorWithRed:71/255.0 green:190/255.0 blue:252/255.0 alpha:0.3];
+        [self addSubview:colorView];
+    }
 }
 
 -(CGRect)getLocWithFrame:(CTFrameRef)frame CTLine:(CTLineRef)line CTRun:(CTRunRef)run origin:(CGPoint)origin
@@ -101,10 +122,6 @@
     CGRect deleteBounds = CGRectOffset(boundsRun, colRect.origin.x, colRect.origin.y);//获取绘制区域
     return deleteBounds;
 }
-
-# warning 进行Data中的wordInfoRange信息判断
-
-# warning 遍历所有文章中单词的range，判断点击地点是否击中
 
 
 
