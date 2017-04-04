@@ -33,9 +33,11 @@ static NSString *const ID = @"cell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.navigationController.navigationBar.barTintColor = [UIColor greenColor];
+//    121 137 217
+    self.navigationController.navigationBar.barTintColor = LARRGB(145, 224, 159);
     self.navigationItem.title = @"扇贝Homework";
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+    
     
     UITableView *tableView = [[UITableView alloc] init];
     tableView.delegate = self;

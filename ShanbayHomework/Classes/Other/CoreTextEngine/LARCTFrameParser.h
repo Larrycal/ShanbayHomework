@@ -13,6 +13,6 @@
 
 @interface LARCTFrameParser : NSObject
 
-+ (LARCoreTextData *)paraseContent:(NSString *)content config:(LARCTFrameParserConfig *)config;
++ (LARCoreTextData *)paraseContent:(NSAttributedString *)content config:(LARCTFrameParserConfig *)config;
 
 @end

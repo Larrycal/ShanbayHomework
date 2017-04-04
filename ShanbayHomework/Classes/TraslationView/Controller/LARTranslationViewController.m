@@ -37,7 +37,8 @@
     config.textColor = [UIColor redColor];
     config.width = self.ctView.width;
     
-    LARCoreTextData *data = [LARCTFrameParser paraseContent:self.translation config:config];
+    NSAttributedString *s = [[NSAttributedString alloc] initWithString:self.translation];
+    LARCoreTextData *data = [LARCTFrameParser paraseContent:s config:config];
     self.ctView.data = data;
     self.ctView.height = data.height;
     self.ctView.backgroundColor = [UIColor yellowColor];

@@ -28,6 +28,7 @@
     if (self.data) {
         CTFrameDraw(self.data.ctFrame, context);
     }
+    
 }
 
 //- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {

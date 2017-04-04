@@ -59,15 +59,11 @@
 /**
  * 添加子控制器
  */
-- (void)setUpChildVC:(UIViewController *)vc Title:(NSString *)title Image:(NSString *)image SelectImage:(NSString *)selectImage{
+- (void)setUpChildVC:(UIViewController *)vc Title:(NSString *)title Image:(NSString *)image SelectImage:(NSString *)selectImage {
     
-    vc.navigationItem.title = title;
     vc.tabBarItem.title = title;
     vc.tabBarItem.image = [UIImage imageNamed:image];
     vc.tabBarItem.selectedImage = [UIImage imageNamed:selectImage];
-    
-    // 包装导航控制器,添加导航控制器为tabBarController的子控制器
-//    LaNavigationController *navigationController = [[LaNavigationController alloc] initWithRootViewController:vc];
     
     // 设置导航栏颜色
     [self addChildViewController:vc];
