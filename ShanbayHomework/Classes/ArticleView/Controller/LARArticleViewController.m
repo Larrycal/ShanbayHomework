@@ -12,6 +12,7 @@
 #import "LARCTFrameParser.h"
 #import "LARCTFrameParserConfig.h"
 #import "LARArticle.h"
+#import "LARWord.h"
 #import "UIBarButtonItem+LARBarItem.h"
 
 @interface LARArticleViewController ()
@@ -27,6 +28,10 @@
 @property (strong, nonatomic) NSMutableAttributedString *highlightStr;
 /** 数组 */
 @property (copy, nonatomic) NSArray *number;
+/** 滑动条 */
+@property (strong, nonatomic) UISlider *slider;
+/** 变化之前的sliderNumber */
+@property (assign, nonatomic) NSNumber *beforeNum;
 @end
 
 @implementation LARArticleViewController
@@ -39,13 +44,15 @@
 }
 
 - (NSMutableAttributedString *)highlightStr {
-    if (!_highlightStr) {
+    
         _highlightStr = [[NSMutableAttributedString alloc] initWithString:_article];
         [_article enumerateSubstringsInRange:NSMakeRange(0, [_article length])
                                      options:NSStringEnumerationByWords
                                   usingBlock:^(NSString * _Nullable substring, NSRange substringRange, NSRange enclosingRange, BOOL * _Nonnull stop) {
+                                      LARWord *word;
                                       for (int i = 0; i < _words.count; ++i) {
-                                          if ([[_words[i] valueForKey:@"word"] isEqualToString:substring]) {
+                                          word = _words[i];
+                                          if ([word.word isEqualToString:substring] && (int)word.level == (int)(_slider.value + 0.5)) {
                                               UIColor *cor = [UIColor greenColor];
                                               NSDictionary *d = @{(NSString *)kCTBackgroundColorAttributeName:(id)cor.CGColor};
                                               [_highlightStr addAttributes:d range:substringRange];
@@ -53,7 +60,7 @@
                                           }
                                       }
                                   }];
-    }
+    
     return _highlightStr;
 }
 
@@ -94,7 +101,7 @@
     self.ctView.height = data.height;
     self.ctView.backgroundColor = [UIColor whiteColor];
     
-    self.scrollView.frame = CGRectMake(0, 0, w, h-self.tabBarController.tabBar.height);
+    self.scrollView.frame = CGRectMake(0, 0, w, h - self.tabBarController.tabBar.height);
     self.scrollView.contentSize = CGSizeMake(w, data.height);
     [self.scrollView addSubview:_ctView];
     [self.view addSubview:self.scrollView];
@@ -118,11 +125,19 @@
 }
 
 - (void)sliderSlide:(UISlider *)slider {
+    if(!_slider){
+        _slider = slider;
+    }
     NSUInteger index = (NSUInteger)(slider.value + 0.5);
     [slider setValue:index animated:NO];
     NSNumber *number = self.number[index];
-    LARLog(@"sliderIndex:%lu",(unsigned long)index);
-    LARLog(@"number:%@",number);
+    if ([number intValue]!=[self.beforeNum intValue]) {
+        self.beforeNum = number;
+        self.ctView.data = [LARCTFrameParser paraseContent:self.highlightStr config:_config];
+        [_ctView setNeedsDisplay];
+        LARLog(@"sliderIndex:%lu",(unsigned long)index);
+        LARLog(@"number:%@",number);
+    }
 }
 
 @end
