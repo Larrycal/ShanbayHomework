@@ -1,5 +1,6 @@
 # ShanbayHomework
-小作业展示
+
+##小作业展示
 ![小作业展示](https://github.com/Larrycal/ShanbayHomework/blob/master/shanbayHomework.gif)
 
 ## 扇贝作业Checklist :
