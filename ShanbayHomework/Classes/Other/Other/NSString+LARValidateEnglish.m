@@ -9,6 +9,7 @@
 #import "NSString+LARValidateEnglish.h"
 
 @implementation NSString (LARValidateEnglish)
+// 英文判断
 + (BOOL)isEnglish:(NSString *)str {
     for (int i = 0; i< [str length]; ++i) {
          int asiic = [str characterAtIndex:i];

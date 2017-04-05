@@ -26,3 +26,7 @@
 #define LARRGB(A, B, C)    [UIColor colorWithRed:((float)(A))/255.0f green:((float)(B))/255.0f blue:((float)(C))/255.0f alpha:1.0f]
 
 #define LARGlobalBg LARRGB(254, 254, 254)
+
+// popView显示通知事件
+static NSString *const popViewShow = @"popViewShow";
+static NSString *const popViewHide = @"popViewHide";

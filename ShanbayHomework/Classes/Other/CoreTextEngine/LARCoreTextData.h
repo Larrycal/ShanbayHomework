@@ -11,6 +11,8 @@
 
 @class LARArticleWordInfo;
 
+typedef void(^popViewBlock)(void);
+
 @interface LARCoreTextData : NSObject
 /** 这是一个Frame对象，用于表示一个绘制区域，它是由CTFramesetterRef生成 */
 @property (assign, nonatomic) CTFrameRef ctFrame;
@@ -20,4 +22,6 @@
 @property (strong, nonatomic) NSArray *wordInfos;
 /** 文章长度 */
 @property (assign, nonatomic) NSInteger length;
+/** 显示模态窗口Block */
+@property (copy, nonatomic) popViewBlock popBlock;
 @end

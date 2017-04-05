@@ -9,11 +9,17 @@
 #import "LARCTDisplayView.h"
 #import "LARCoreTextData.h"
 #import "LARArticleWordInfo.h"
+#import "LARPopView.h"
+#import "LARPopConfig.h"
+
 
 @interface LARCTDisplayView ()
 {
-    NSMutableArray *arrText;
-    UIView *colorView;
+    BOOL isHit;
+    NSMutableArray *arrText;// 存放每一个单词的CTRun
+    UIView *colorView; // 高亮单词view
+    UIVisualEffectView *effectview; // 毛玻璃view
+    LARPopView *popView; // HUDview
 }
 @end
 
@@ -33,9 +39,109 @@
     
 }
 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    for (UIView *view in self.subviews) {
+        [view removeFromSuperview];
+    }
+    UITouch * touch = [touches anyObject];
+    CGPoint location = [touch locationInView:self];
+   
+    for (LARArticleWordInfo *info in arrText) {
+        CGRect textFrmToScreen = [self convertRectFromLoc:info.wordFrame];
+        if (CGRectContainsPoint(textFrmToScreen, location)) {
+            [self highlightString:info.word AndShowHudWithFrame:textFrmToScreen];
+            isHit = YES;
+            break;
+        }
+    }
+}
 
+
+#pragma mark - 通知中心操作
+/** 注册通知中心 */
+- (void)registerForPopView {
+    // 注册popView出现通知
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(popViewWillApper) name:popViewShow object:nil];
+    // 注册popView消失通知
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(popViewWillHide) name:popViewHide object:nil];
+}
+
+/** popView出现，屏蔽用户操作 */
+- (void)popViewWillApper {
+    [self setUserInteractionEnabled:NO];
+}
+
+/** popView出现，启动用户操作 */
+- (void)popViewWillHide {
+    [colorView removeFromSuperview];
+    [effectview removeFromSuperview];
+    [self setUserInteractionEnabled:YES];
+}
+
+
+#pragma mark - HUD显示操作
+/** 高亮单词，显示HUD */
+- (void)highlightString:(NSString *)word AndShowHudWithFrame:(CGRect)frame {
+    LARPopConfig *config = [[LARPopConfig alloc] init];
+    config.word = word;
+    config.message = @"抱歉，没有找到翻译!";
+    [self popViewShowWithConfig:config];
+    [self colorViewShowWithFrame:frame];
+}
+
+/** 显示colorView */
+- (void)colorViewShowWithFrame:(CGRect)frame {
+    if (colorView) {// 移除原有colorView，添加新的坐标的colorView
+        [colorView removeFromSuperview];
+        colorView = nil;
+    }
+    colorView = [[UIView alloc] initWithFrame:frame];
+    // LARRGB(41, 157, 133);
+    colorView.backgroundColor = [UIColor colorWithRed:41/255.0 green:157/255.0 blue:133/255.0 alpha:0.4];
+    [self addSubview:colorView];
+}
+
+/** 显示popView */
+- (void)popViewShowWithConfig:(LARPopConfig *)config {
+    // 显示之前先移除
+    if (popView) {
+        [popView removeFromSuperview];
+        popView = nil;
+    }
+
+    // 创建popView
+    popView = [LARPopView popView];
+    CGFloat w = UIApplication.sharedApplication.keyWindow.frame.size.width;
+    CGFloat h = UIApplication.sharedApplication.keyWindow.frame.size.height;
+    CGFloat popSize = 200;
+    popView.config = config;
+    popView.frame = CGRectMake((w - popSize)/2,(h - popSize)/2 ,popSize,popSize );
+    
+    // 先添加毛玻璃View
+    [self effectViewShow];
+    
+    // 添加PopView到Keywindow
+    [UIApplication.sharedApplication.keyWindow addSubview:popView];
+}
+
+/** 显示毛玻璃View */
+- (void)effectViewShow {
+    if (!effectview) {
+        UIBlurEffect *blur = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
+        effectview = [[UIVisualEffectView alloc] initWithEffect:blur];
+        effectview.frame = [UIScreen mainScreen].bounds;
+        effectview.height = self.data.height;
+        effectview.alpha = 0.6;
+    }
+    [self addSubview:effectview];
+}
+
+#pragma mark - CoreText核心操作
 // 给单词绑定CTFrame
 - (void)handleActiveRect{
+    // 注册通知中心
+    [self registerForPopView];
+    
     if (!arrText) {
         arrText = [NSMutableArray array];
     }
@@ -45,17 +151,14 @@
     CTFrameGetLineOrigins(self.data.ctFrame, CFRangeMake(0, 0), points);//获取起点
     for (int i = 0; i < arrLines.count; i ++) {//遍历线的数组
         CTLineRef line = (__bridge CTLineRef)arrLines[i];
-        NSArray *arrGlyphRun = (NSArray *)CTLineGetGlyphRuns(line);//获取GlyphRun数组（GlyphRun：高效的字符绘制方案）
-        for (int j = 0; j < arrGlyphRun.count; ++j) {
+        NSArray *arrGlyphRun = (NSArray *)CTLineGetGlyphRuns(line);//获取CTRun数组
+        for (int j = 0; j < arrGlyphRun.count; ++j) { // 遍历每一个CRun来获取每一个单词的CTRun,并保存到数组
             CTRunRef run = (__bridge CTRunRef)arrGlyphRun[j];
             NSDictionary *attributes = (NSDictionary *)CTRunGetAttributes(run);
             CGPoint point = points[i];//获取一个起点
-            NSString *str = attributes[@"word"];
+            NSString *str = attributes[@"word"]; // 利用已经绑定了word标志的富文本进行识别单词
             if (str) {
-                LARLog(@"%@",str);
                 LARArticleWordInfo *info = [[LARArticleWordInfo alloc] init];
-                CGRect rect = [self getLocWithFrame:self.data.ctFrame CTLine:line CTRun:run origin:point];
-                LARLog(@"%@",NSStringFromCGRect(rect));
                 info.wordFrame =[self getLocWithFrame:self.data.ctFrame CTLine:line CTRun:run origin:point];
                 info.word = str;
                 [arrText addObject:info];
@@ -64,49 +167,7 @@
     }
 }
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    BOOL isHit = NO;
-    UITouch * touch = [touches anyObject];
-    CGPoint location = [touch locationInView:self];
-    for (LARArticleWordInfo *info in arrText) {
-        CGRect textFrmToScreen = [self convertRectFromLoc:info.wordFrame];
-        if (CGRectContainsPoint(textFrmToScreen, location)) {
-            [self clickAndChangeColor:info.word Frame:textFrmToScreen];
-            isHit = YES;
-            break;
-        }
-    }
-    if (!isHit) {
-        [colorView removeFromSuperview];
-    }
-}
-
-- (void)touchesCancelled:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    LARLog(@"touchesCancelled");
-}
-
-- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    LARLog(@"touchesEnded");
-}
-
-
-///将系统坐标转换为屏幕坐标
-- (CGRect)convertRectFromLoc:(CGRect)rect
-{
-    return CGRectMake(rect.origin.x, self.bounds.size.height - rect.origin.y - rect.size.height , rect.size.width, rect.size.height);
-}
-
-- (void)clickAndChangeColor:(NSString *)word Frame:(CGRect)frame{
-        LARLog(@"点击了单词:%@",word);
-    [colorView removeFromSuperview];
-    colorView = nil;
-    if (!colorView) {
-        colorView = [[UIView alloc] initWithFrame:frame];
-        colorView.backgroundColor = [UIColor colorWithRed:71/255.0 green:190/255.0 blue:252/255.0 alpha:0.3];
-        [self addSubview:colorView];
-    }
-}
-
+/** 获取每一个CTRun的绘制区域 */
 -(CGRect)getLocWithFrame:(CTFrameRef)frame CTLine:(CTLineRef)line CTRun:(CTRunRef)run origin:(CGPoint)origin
 {
     CGFloat ascent;//获取上距
@@ -123,10 +184,16 @@
     return deleteBounds;
 }
 
+/** 将系统坐标系转换为屏幕坐标系 */
+- (CGRect)convertRectFromLoc:(CGRect)rect
+{
+    return CGRectMake(rect.origin.x, self.bounds.size.height - rect.origin.y - rect.size.height , rect.size.width, rect.size.height);
+}
 
-
-
-
-
+#pragma mark - 扫尾工作
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    LARLog(@"CTDisplayView销毁了");
+}
 
 @end

@@ -13,7 +13,9 @@
 
 @implementation LARCTFrameParser
 
+/** 初始化CT配置信息 */
 + (NSDictionary *)attributesWithConfig:(LARCTFrameParserConfig *)config {
+    // 字体、行间距等设置
     CGFloat fontSize = config.fontSize;
     CTFontRef fontRef = CTFontCreateWithName((CFStringRef)@"ArialMT", fontSize, NULL);
     CGFloat lineSpacing = config.lineSpace;
@@ -39,6 +41,7 @@
     return dict;
 }
 
+/** 配置Data信息 */
 + (LARCoreTextData *)paraseContent:(NSAttributedString *)content config:(LARCTFrameParserConfig *)config wordInfo:(NSArray *)wordInfos{
     
     NSDictionary *attributes = [self attributesWithConfig:config];
@@ -69,6 +72,7 @@
     return data;
 }
 
+/** 计算CTView需要的高度 */
 + (CTFrameRef)createFrameWithFramesetter:(CTFramesetterRef)framesetter
                                   config:(LARCTFrameParserConfig *)config
                                   height:(CGFloat)height {

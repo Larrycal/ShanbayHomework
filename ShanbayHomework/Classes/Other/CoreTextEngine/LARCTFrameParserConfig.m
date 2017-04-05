@@ -10,11 +10,11 @@
 
 @implementation LARCTFrameParserConfig
 
-- (instancetype)init{
+- (instancetype)init {
     if (self = [super init]) {
         _width = 200.0f;
-        _fontSize = 16.0f;
-        _lineSpace = 8.0f;
+        _fontSize = 22.0f;
+        _lineSpace = 12.0f;
         _textColor = LARRGB(58, 58, 58);
     }
     return self;

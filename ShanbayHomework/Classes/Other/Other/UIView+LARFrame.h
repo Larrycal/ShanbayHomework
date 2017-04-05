@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+/*
+ 该类用来快速获取View的frame结构体各信息
+ */
 @interface UIView (LARFrame)
 
 - (CGFloat)x;

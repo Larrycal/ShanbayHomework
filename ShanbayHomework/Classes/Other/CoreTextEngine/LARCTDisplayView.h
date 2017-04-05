@@ -10,7 +10,11 @@
 #import "LARCoreTextData.h"
 
 @interface LARCTDisplayView : UIView
+
 /** 数据 */
 @property (strong, nonatomic) LARCoreTextData *data;
+
+/** 开始执行CoreText核心操作 */
 - (void)handleActiveRect;
+
 @end

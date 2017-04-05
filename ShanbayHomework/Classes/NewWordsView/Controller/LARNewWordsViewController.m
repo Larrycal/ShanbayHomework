@@ -24,6 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    // 初始化CTView和ScrollView
     _ctView = [[LARCTDisplayView alloc] init];
     _scrollView = [[UIScrollView alloc] init];
     
@@ -32,36 +33,34 @@
     CGFloat w = [UIScreen mainScreen].bounds.size.width;
     self.ctView.frame = CGRectMake(0, 0, w, h);
     
+    // 配置默认文件
     LARCTFrameParserConfig *config = [[LARCTFrameParserConfig alloc] init];
+# warning 为什么使用LARRGB会导致野指针？？？疑是AutoreleasePool的原因
     config.textColor = [UIColor blackColor];
     config.width = self.ctView.width;
     
+    // 初始化生词和短语
     NSAttributedString *s = [[NSAttributedString alloc] initWithString:self.words];
     LARCoreTextData *data = [LARCTFrameParser paraseContent:s config:config wordInfo:nil];
     self.ctView.data = data;
     self.ctView.height = data.height;
     self.ctView.backgroundColor = LARGlobalBg;
     
-    self.scrollView.frame = CGRectMake(0, 0, w, h-self.tabBarController.tabBar.height);
+    // 设置ScrollView的滚动长度
+    self.scrollView.frame = CGRectMake(0, 0, w, h - self.tabBarController.tabBar.height);
     self.scrollView.contentSize = CGSizeMake(w, data.height);
+    
+    // 设置背景色
+    self.view.backgroundColor = LARGlobalBg;
+    
+    // 添加View
     [self.scrollView addSubview:_ctView];
     [self.view addSubview:self.scrollView];
-    self.view.backgroundColor = LARGlobalBg;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)viewWillAppear:(BOOL)animated {
+    self.tabBarController.navigationItem.title = @"生词";
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

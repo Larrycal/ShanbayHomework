@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "ViewController.h"
+#import "LARNavigationController.h"
 
 @interface AppDelegate ()
 
@@ -21,7 +22,7 @@
     self.window = [[UIWindow alloc] init];
     self.window.frame = [UIScreen mainScreen].bounds;
     
-    UINavigationController *gnaVC = [[UINavigationController alloc] init];
+    LARNavigationController *gnaVC = [[LARNavigationController alloc] init];
     ViewController *vc = [[ViewController alloc] init];
     
     self.window.rootViewController = gnaVC;

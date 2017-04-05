@@ -28,33 +28,39 @@
     return self;
 }
 
-- (void)loadView {
-    [super loadView];
+// 初始化tabBarItem字体颜色等
++ (void)initialize {
     
+    NSMutableDictionary *attrs = [NSMutableDictionary dictionary];
+    attrs[NSFontAttributeName] = [UIFont systemFontOfSize:12];
+    attrs[NSForegroundColorAttributeName] = [UIColor grayColor];
+    
+    NSMutableDictionary *selectAttrs = [NSMutableDictionary dictionary];
+    selectAttrs[NSFontAttributeName] = [UIFont systemFontOfSize:15];
+    selectAttrs[NSForegroundColorAttributeName] = LARRGB(41, 157, 133);
+    
+    UITabBarItem *item = [UITabBarItem appearance];
+    [item setTitleTextAttributes:attrs forState:UIControlStateNormal];
+    [item setTitleTextAttributes:selectAttrs forState:UIControlStateSelected];
 }
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-}
-
-
+// 加载操作
 - (void)loadData {
+    
     /** 添加子控制器 */
     LARArticleViewController *articleVC = [[LARArticleViewController alloc] init];
     articleVC.article = [_article.title stringByAppendingFormat:@"\r\n%@",_article.article];
     articleVC.words = _words.allWords;
-    
-    [self setUpChildVC:articleVC Title:@"文章" Image:@"tabBar_essence_icon" SelectImage:@"tabBar_essence_click_icon"];
+    [self setUpChildVC:articleVC Title:@"文章" Image:@"tab_icon_home" SelectImage:@"tab_icon_home_press"];
     
     LARNewWordsViewController *newWordsVC = [[LARNewWordsViewController alloc] init];
     newWordsVC.words = _article.words;
-    [self setUpChildVC:newWordsVC Title:@"生词" Image:@"tabBar_new_icon" SelectImage:@"tabBar_new_click_icon"];
+    [self setUpChildVC:newWordsVC Title:@"生词" Image:@"tab_icon_community" SelectImage:@"tab_icon_community_press"];
     
     LARTranslationViewController *translationVC = [[LARTranslationViewController alloc] init];
     translationVC.translation = _article.translation;
-    [self setUpChildVC:translationVC Title:@"翻译" Image:@"tabBar_friendTrends_icon" SelectImage:@"tabBar_me_click_icon"];
-
+    [self setUpChildVC:translationVC Title:@"翻译" Image:@"tab_icon_mine" SelectImage:@"tab_icon_mine_press"];
+    
 }
 /**
  * 添加子控制器
@@ -68,6 +74,4 @@
     // 设置导航栏颜色
     [self addChildViewController:vc];
 }
-
-
 @end

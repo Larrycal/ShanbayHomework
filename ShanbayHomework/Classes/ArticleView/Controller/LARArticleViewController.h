@@ -14,4 +14,5 @@
 @property (copy, nonatomic) NSString *article;
 /** 单词数组 */
 @property (strong, nonatomic) NSArray *words;
+
 @end
